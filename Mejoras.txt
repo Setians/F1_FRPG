@@ -1,0 +1,7 @@
+Utilizar descolgables
+Cambiar el nombre de las columnas
+refrescar las grillas automaticamente
+Al borrar un registro relacionado con otra tabla tira error
+Agregar busquedas o filtros
+Mejorar la pantanlla resultados por carrera, utilizar inner joins
+realizar informes/vistas
