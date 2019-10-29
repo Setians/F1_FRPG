@@ -1,14 +1,11 @@
 --use master
----drop database Formula_1
+--drop database Formula_1
+
+--Creacion de Base de datos
 --Create database Formula_1
---go
 --use Formula_1
 
-
-
-
-
-
+--Creacion de Tablas
 create table F1_Corredores
 (
 ID_Corredor int identity(1,1) not null,
@@ -24,18 +21,19 @@ constraint pk_Corredor primary key (iD_Corredor)
 create table F1_Equipos
 (
 ID_Equipo int identity(1,1) not null,
-Central_Equipos varchar(30) null,
+Central_Equipos varchar(50) null,
 Jefe_Equipo varchar(50) null,
 AñoD_Equipo int null,
-Nombre_Equipo varchar(30) not null,
-JefeT_Equipo varchar(30)null,
+Nombre_Equipo varchar(70) not null,
+JefeT_Equipo varchar(50)null,
 constraint pk_Equipo primary key (iD_Equipo)
 )
 
 create table F1_Circuitos
+
 (
 ID_Circuito int identity (1,1) not null,
-PrimerGP_Circuito int null,
+PrimerGP_Circuito datetime null,
 Nombre_Circuito varchar (50) not null,
 Pais_Circuito varchar(50) null,
 Longitud varchar(20) null,
@@ -44,8 +42,8 @@ constraint pk_Circuito primary key (id_Circuito)
 
 create table F1_Temporadas
 (
-ID_Temporada int not null,
-Nombre_Temporada varchar (20) not null,
+ID_Temporada int identity (1,1) not null,
+Nombre_Temporada int not null,
 constraint pk_Temporada primary key (id_Temporada)
 )
 create table F1_CorredoresxEquipoxTemporadas
@@ -61,9 +59,9 @@ create table F1_Carreras
 ID_Carrera int identity(1,1) not null,
 ID_Circuito_Carrera int not null,
 id_Temporada int not null,
-Nombre_Carrera varchar(30) not null,
+Nombre_Carrera varchar(50) not null,
 NumeroVueltas_Carrera int not null,
-Distancia_Carrera varchar(20) null,
+Distancia_Carrera varchar(50) null,
 constraint pk_Carrera primary key (ID_Carrera)
 )
 create table F1_CarrerasxCorredor
@@ -73,10 +71,10 @@ idConductor_CC int not null,
 Posiciongrilla_CC int not null,
 PosicionFinal_CC int not null,
 VueltasCompletadas_CC int not null,
-Tiempo_CC  time not null,
+Tiempo_CC  varchar(50) not null,
 constraint pk_CC primary key (Idcarrera_cc, idConductor_cc)
 )
-
+---______________RELACIONES
 -------- Referencias de carrerasxCorredor------
 alter table F1_CarrerasxCorredor add constraint FK_CC foreign key (IdCarrera_CC)
 references F1_Carreras(ID_Carrera) 
@@ -98,6 +96,9 @@ alter table F1_Carreras add constraint FK_CarrerasxT foreign key (id_Temporada)
 references F1_Temporadas(ID_TEmporada)
 -------------------------------------------------
 go
+
+
+--Procedimientos almacenados
 ---------Procedimientos de Corredores--------------
 CREATE PROCEDURE spInsertarCorredor
 (
@@ -349,7 +350,7 @@ CREATE PROCEDURE spInsertarCarrera
 @IDCircuito int,
 @IDTemporada int,
 @NumeroVueltas int,
-@Distancia varchar(20)
+@Distancia varchar(50)
 )
 AS
 INSERT INTO F1_Carreras
@@ -388,7 +389,7 @@ CREATE PROCEDURE spActualizarCarrera
 @IDCircuito int,
 @IDTemporada int,
 @NumeroVueltas int,
-@Distancia varchar(20)
+@Distancia varchar(50)
 )
 AS
 UPDATE F1_Carreras
@@ -521,57 +522,52 @@ RETURN
 go	
 
 
-select PosicionFinal_CC,Nombre_Corredor,Nombre_Equipo,Posiciongrilla_CC,VueltasCompletadas_CC,Tiempo_CC,'Puntos'= 
+create Procedure SP_ResultadoXCarrerasxTemporada
+@idTemporada int,
+@idCarrera int
+as
+select Nombre_Temporada as Temporada,(d.Nombre_Corredor+ ' '+d.Apellido_Corredor) as Corredor,
+a.Nombre_Carrera as Carrera, e.Nombre_Circuito as Circuito,
+PosicionFinal_CC as [Resultado Final], Puntos = 
 case
-when PosicionFinal_CC = 1 then 25
-when PosicionFinal_CC =2 then  18
-when PosicionFinal_CC =3 then 15
-when PosicionFinal_CC =4 then 10
-when PosicionFinal_CC =5 then 8
-when PosicionFinal_CC =6 then 6
-when PosicionFinal_CC =7 then 5
-when PosicionFinal_CC =8 then 3
-when PosicionFinal_CC =9 then 2
-when PosicionFinal_CC =9 then 1
+when Nombre_Temporada >= 2010 then
+	(case
+	when PosicionFinal_CC = 1 then 25
+	when PosicionFinal_CC = 2 then 18
+	when PosicionFinal_CC = 3 then 15
+	when PosicionFinal_CC = 4 then 10
+	when PosicionFinal_CC = 5 then 8
+	when PosicionFinal_CC = 6 then 6
+	when PosicionFinal_CC = 7 then 5
+	when PosicionFinal_CC = 8 then 3
+	when PosicionFinal_CC = 9 then 2
+	when PosicionFinal_CC = 10 then 1
+	end)
+when Nombre_Temporada >= 1950 and Nombre_Temporada <= 1954 then
+	(case
+	when PosicionFinal_CC = 1 then 8
+	when PosicionFinal_CC = 2 then 6	
+	when PosicionFinal_CC = 3 then 4
+	when PosicionFinal_CC = 3 then 3
+	when PosicionFinal_CC = 3 then 2
+	end)
 end
-from F1_CarrerasxCorredor inner join F1_Corredores 
-on (idConductor_CC = ID_Corredor) inner join F1_CorredoresxEquipoxTemporadas 
-on (id_Corredor_CET = ID_Corredor) inner join F1_Equipos on
-(ID_Equipo=id_Equipo_CET) 
-where IDCarrera_CC = IDCarrera_CC
-order by PosicionFinal_CC asc
-go
-
-select id_Corredor_CET, Nombre_Corredor, id_Equipo_CET, id_Temporadas_CET 
-from F1_CorredoresxEquipoxTemporadas inner join F1_Corredores 
-on (id_Corredor_CET = ID_Corredor)
-go
-
-select Nombre_Corredor,Nombre_Equipo,Puntos= 
-case
-when PosicionFinal_CC = 1 then 25
-when PosicionFinal_CC = 2 then  18
-when PosicionFinal_CC = 3 then 15
-when PosicionFinal_CC = 4 then 10
-when PosicionFinal_CC = 5 then 8
-when PosicionFinal_CC = 6 then 6
-when PosicionFinal_CC = 7 then 5
-when PosicionFinal_CC = 8 then 3
-when PosicionFinal_CC = 9 then 2
-when PosicionFinal_CC = 10 then 1
-when PosicionFinal_CC > 10 then 0
-end 
-from F1_CarrerasxCorredor inner join F1_Corredores 
-on (idConductor_CC = ID_Corredor) inner join F1_CorredoresxEquipoxTemporadas 
-on (id_Corredor_CET = ID_Corredor) inner join F1_Equipos on
-(ID_Equipo=id_Equipo_CET) inner join F1_Carreras on (ID_Carrera= IDCarrera_CC)
-inner join F1_Temporadas on (F1_Temporadas.ID_Temporada = F1_Carreras.id_Temporada)
-where F1_Temporadas.ID_Temporada = F1_Carreras.id_Temporada
-order by PosicionFinal_CC asc
+from F1_CarrerasXCorredor c 
+inner join  F1_Corredores d on (c.idConductor_CC = d.ID_Corredor)
+inner join  F1_Carreras a on (c.idCarrera_CC = a.id_Carrera)  
+inner join F1_Circuitos e on (a.id_Circuito_Carrera = e.ID_Circuito)
+inner join F1_temporadas f on (a.id_Temporada = f.Id_Temporada)
+where f.Id_Temporada = @idTemporada and a.id_Carrera = @idCarrera
+order by [Resultado Final], Nombre_Temporada
+return
 go
 
 
 
+
+
+
+---CONSULTAS
 
 
 Select ID_Corredor as id, (Nombre_Corredor+ ' '+ Apellido_Corredor )as Nombre from F1_Corredores order by id desc
@@ -579,15 +575,35 @@ go
 
 use Formula_1
 go
----Cargado de Corredores
-exec spInsertarCorredor 'Lewis', 'Hamilton','Stevenage, Inglaterra', '07/01/1985', 'Reino Unido','\imagenes\Corredores\Hamilton.jpg'
-exec spInsertarCorredor 'Sebastian', 'Vettel','Heppenheim, Alemania', '03/07/1987', 'Alemania',  '\imagenes\Corredores\Vettel.jpg'
-exec spInsertarCorredor 'Kimi', 'Räikkönen','Espoo, Finlandia', '17/10/1979', 'Finlandia', '\imagenes\Corredores\Raikonen.jpg'   
-exec spInsertarCorredor 'Juan Manuel', 'Fangio','Balcarce, Argentina', '24/6/1911', 'Argentina', '\imagenes\Corredores\Fangio.png'
-exec spInsertarCorredor 'Lando', 'Norris','Bristol, Inglaterra', '13/11/1999', 'Reino Unido', '\imagenes\Corredores\Lando Norris.jpg'   
-exec spInsertarCorredor 'Max', 'Verstappen','Hasselt, Bélgica', '30/09/1997', 'Paises Bajos', '\imagenes\Corredores\Max Verstappen.jpg'
 
-select * from F1_Corredores
+---Carga de datos 
+
+exec spInsertarCorredor 'Lewis', 'Hamilton','Stevenage, Inglaterra', '07/01/1985', 'Reino Unido','D:\mtias\lab\Formula1\imagenes\Corredores\Hamilton.jpg'
+exec spInsertarCorredor 'Sebastian', 'Vettel','Heppenheim, Alemania', '03/07/1987', 'Alemania',  'D:\mtias\lab\Formula1\imagenes\Corredores\Vettel.jpg'
+exec spInsertarCorredor 'Kimi', 'Räikkönen','Espoo, Finlandia', '17/10/1979', 'Finlandia', 'D:\mtias\lab\Formula1\imagenes\Corredores\Raikonen.jpg'   
+exec spInsertarCorredor 'Juan Manuel', 'Fangio','Balcarce, Argentina', '24/6/1911', 'Argentina', 'D:\mtias\lab\Formula1\imagenes\Corredores\Fangio.png'
+exec spInsertarCorredor 'Lando', 'Norris','Bristol, Inglaterra', '13/11/1999', 'Reino Unido', 'D:\mtias\lab\Formula1\imagenes\Corredores\Lando Norris.jpg'   
+exec spInsertarCorredor 'Max', 'Verstappen','Hasselt, Bélgica', '30/09/1997', 'Paises Bajos', 'D:\mtias\lab\Formula1\imagenes\Corredores\Max Verstappen.jpg'
+
+
+
+
+
+
+Select Pais_Corredor from F1_Corredores where F1_Corredores.ID_Corredor = 1;
+
+Select CONVERT( VARCHAR , FechaN_Corredor , 103 )as fecha from F1_Corredores where F1_Corredores.ID_Corredor = 1
+Select Imagen_Corredor from F1_Corredores where ID_Corredor = 1
+
+Select ID_Corredor as ID, (Nombre_Corredor+ ' '+ Apellido_Corredor )as Nombre from F1_Corredores where Pais_Corredor = 'Alemania'
+Select ID_Corredor as ID, (Nombre_Corredor+ ' '+ Apellido_Corredor )as Nombre from F1_Corredores order by CONVERT( VARCHAR , FechaN_Corredor , 112 ) desc
+
+use Formula_1
+
+Select DISTINCT Pais_Corredor from F1_Corredores 
+
+
+Select ID_Corredor as ID, (Nombre_Corredor+ ' '+ Apellido_Corredor )as Nombre from F1_Corredores where Pais_Corredor = 'Reino Unido' order by CONVERT( VARCHAR , FechaN_Corredor , 112 ) desc
 
 ---Cargado de Circuitos
 INSERT INTO [Formula_1].[dbo].[F1_Circuitos] ([PrimerGP_Circuito], [Nombre_Circuito], [Pais_Circuito], [Longitud]) VALUES   (1996, 'Melbourne Grand Prix Circuit', 'Melbourne, Australia', '5.303 km')
@@ -612,29 +628,180 @@ INSERT INTO [Formula_1].[dbo].[F1_Circuitos] ([PrimerGP_Circuito], [Nombre_Circu
 INSERT INTO [Formula_1].[dbo].[F1_Circuitos] ([PrimerGP_Circuito], [Nombre_Circuito], [Pais_Circuito], [Longitud]) VALUES   (2004, 'Shanghai International Circuit', 'Shanghái, China', '5.451km')
 INSERT INTO [Formula_1].[dbo].[F1_Circuitos] ([PrimerGP_Circuito], [Nombre_Circuito], [Pais_Circuito], [Longitud]) VALUES   (2004, 'Bahrain International Circuit', 'Sakhir, Baréin', '5.412km')
 
-select * from [F1_Circuitos] order by Pais_Circuito
+
+---Cargad de Temporadas
+
+insert into f1_Temporadas(Nombre_Temporada) 
+values ('2018')
+
+insert into f1_Temporadas(Nombre_Temporada) 
+values ('1950')
+---Carga de Equipos
+
+insert into f1_equipos
+values('Brackley, United Kingdom','Toto Wolff',1970,'Mercedes AMG Petronas Motorsport','James Allison')
+
+insert into f1_equipos
+values('Maranello, Italy','Mattia Binotto',1950,'Scuderia Ferrari Mission Winnow','TBC')
+
+insert into f1_equipos
+values('N/A','Frédéric Vasseur',1993,'Alfa Romeo Racing','Simone Resta')
+
+insert into f1_Equipos
+values('Milton Keynes, United Kingdom','Christian Horner','1997','Aston Martin Red Bull Racing','Pierre Waché
+')
+
+---Carga de Carreras
+insert into f1_carreras
+values(1,1,'FORMULA 1 2018 ROLEX AUSTRALIAN GRAND PRIX',58,'5,303 kilómetros (3,3 mi)')
+insert into f1_carreras
+values(2,1,'FORMULA 1 GRAND PRIX DE MONACO 2018 ',78,'318,1 kilómetros (197,66 mi)')
+
+--Carga de corredores en equipo por temporada
+insert into f1_corredoresxequipoxtemporadas
+values(1,1,1)
+select * from f1_Equipos
+insert into f1_CorredoresxEquipoxTemporadas
+values(2,2,1)
+
+insert into f1_CorredoresxEquipoxTemporadas
+values(4,3,2)
+
+---Carga de carrreras
+select * from f1_Circuitos
+insert into f1_CarrerasxCorredor
+values(1,2,3,1,58,'1:29:33.283')
+
+insert into f1_CarrerasxCorredor
+values(1,1,1,2,58,'+5.036s')
 
 
-Select Pais_Corredor from F1_Corredores where F1_Corredores.ID_Corredor = 1;
-
-Select CONVERT( VARCHAR , FechaN_Corredor , 103 )as fecha from F1_Corredores where F1_Corredores.ID_Corredor = 1
-Select Imagen_Corredor from F1_Corredores where ID_Corredor = 1
-
-Select ID_Corredor as ID, (Nombre_Corredor+ ' '+ Apellido_Corredor )as Nombre from F1_Corredores where Pais_Corredor = 'Alemania'
-Select ID_Corredor as ID, (Nombre_Corredor+ ' '+ Apellido_Corredor )as Nombre from F1_Corredores order by CONVERT( VARCHAR , FechaN_Corredor , 112 ) desc
-
-use Formula_1
-
-Select DISTINCT Pais_Corredor from F1_Corredores 
+insert into f1_CarrerasxCorredor
+values(1,3,2,3,58,'+6.309s')
 
 
-Select ID_Corredor as ID, (Nombre_Corredor+ ' '+ Apellido_Corredor )as Nombre from F1_Corredores where Pais_Corredor = 'Reino Unido' order by CONVERT( VARCHAR , FechaN_Corredor , 112 ) desc
-
-Select ID_Circuito as ID, Nombre_Circuito as Nombre from F1_Circuitos
-
-select *
-from F1_Corredores
+insert into f1_CarrerasxCorredor
+values(2,4,1,1,100,'3:13:18.700')
 
 
-select replace(Imagen_Corredor,'%hola%','%Matias%')
-from F1_Corredores
+-------------corredor x equipo x temporada---------------
+select (c.Nombre_Corredor+ ' '+c.Apellido_Corredor) as Corredor, Nombre_Equipo as Equipo, Nombre_Temporada as Temporada
+from f1_CorredoresxEquipoxTemporadas a 
+inner join f1_Temporadas b on (id_Temporadas_CET = id_Temporada)
+inner join f1_Corredores c on (id_Corredor_Cet = ID_Corredor)
+inner join f1_Equipos d on (id_Equipo_CET = id_Equipo)
+order by Temporada desc
+
+-------------------RESULTADO DE CARRERA -----
+select Nombre_Temporada as Temporada,(d.Nombre_Corredor+ ' '+d.Apellido_Corredor) as Corredor,
+a.Nombre_Carrera as Carrera, e.Nombre_Circuito as Circuito,
+PosicionFinal_CC as [Resultado Final], Puntos = 
+case
+when Nombre_Temporada >= 2010 then
+	(case
+	when PosicionFinal_CC = 1 then 25
+	when PosicionFinal_CC = 2 then 18
+	when PosicionFinal_CC = 3 then 15
+	when PosicionFinal_CC = 4 then 10
+	when PosicionFinal_CC = 5 then 8
+	when PosicionFinal_CC = 6 then 6
+	when PosicionFinal_CC = 7 then 5
+	when PosicionFinal_CC = 8 then 3
+	when PosicionFinal_CC = 9 then 2
+	when PosicionFinal_CC = 10 then 1
+	end)
+when Nombre_Temporada >= 1950 and Nombre_Temporada <= 1954 then
+	(case
+	when PosicionFinal_CC = 1 then 8
+	when PosicionFinal_CC = 2 then 6	
+	when PosicionFinal_CC = 3 then 4
+	when PosicionFinal_CC = 3 then 3
+	when PosicionFinal_CC = 3 then 2
+	end)
+end
+from F1_CarrerasXCorredor c 
+inner join  F1_Corredores d on (c.idConductor_CC = d.ID_Corredor)
+inner join  F1_Carreras a on (c.idCarrera_CC = a.id_Carrera)  
+inner join F1_Circuitos e on (a.id_Circuito_Carrera = e.ID_Circuito)
+inner join F1_temporadas f on (a.id_Temporada = f.Id_Temporada)
+where f.Id_Temporada = 1 and a.id_Carrera = 1
+order by [Resultado Final], Nombre_Temporada
+
+
+exec SP_ResultadoXCarrerasxTemporada 1,1
+
+
+
+ --Triggers
+
+ 
+create trigger TRG_VerificarCorredorEnTemporada 
+on F1_CarrerasxCorredor
+for insert
+as
+begin
+	declare @idCarrera int,
+	@idConductor int,
+	@Temporada int
+	select @idCarrera = IDCarrera_CC, @idConductor = idConductor_CC, @Temporada=b.id_Temporada
+	from inserted a inner join F1_Carreras b
+	on (a.IDCarrera_CC = b.ID_Carrera)  
+	
+	IF EXISTS (SELECT * FROM F1_CorredoresxEquipoxTemporadas a 
+			WHERE a.id_Corredor_CET = @idConductor and @Temporada=id_Temporadas_CET) 
+		BEGIN
+			SELECT 'Corredor agregado con exito' 
+		END
+	ELSE
+		BEGIN
+			SELECT 'El corredor no tiene equipo en la temporada actual'
+			rollback tran
+		END	
+end
+
+
+
+
+select * FROM F1_CorredoresxEquipoxTemporadas 
+
+select * from f1_Carreras where id_Carrera=1
+
+select * from f1_Corredores 
+
+select * from f1_CarrerasxCorredor
+select * from f1_Equipos
+
+insert into F1_CorredoresxEquipoxTemporadas 
+values(6,4,1)
+
+insert into f1_CarrerasxCorredor (idCarrera_CC ,idConductor_CC,Tiempo_CC,Posiciongrilla_CC,PosicionFinal_CC,VueltasCompletadas_CC)
+values(1,6,'+28.945s',4,6,58)
+
+select * from f1_Circuitos
+select * from f1_Carreras
+
+---CircuitosXTemporada
+select Nombre_Circuito as Circuito, Pais_Circuito as Pais, c.Nombre_Temporada as Temporada from F1_Circuitos a
+left join f1_Carreras b on (a.id_Circuito = b.id_Circuito_Carrera)
+left join f1_Temporadas c on (b.id_Temporada = c.id_Temporada)
+where b.id_Temporada = 1
+
+
+----Sumar los segundos arriba del primero en finalizar la carrera
+ select *, Tiempo_CC as Tiempo = case when Posiciongrilla_CC is not 1 
+ 
+ from f1_CarrerasxCorredor    
+ 
+ 
+ SELECT CONVERT(varchar,
+						DATEADD(ms,
+						 Cast(replace(
+										replace('+28.945s','+',''),
+								's','') as decimal(18,4))
+								 * 1000,
+  CONVERT(datetime, '1:29:33.283', 114)), 114) as DATA_TYPE  
+
+
+
+
+select * from f1_Temporadas

@@ -31,34 +31,34 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Corredores));
-            this.btn_Cerrar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.DGVCorredores = new System.Windows.Forms.DataGridView();
             this.PanelCorredores = new System.Windows.Forms.Panel();
-            this.lblEquipo_Logo = new System.Windows.Forms.Label();
-            this.btnFiltros = new System.Windows.Forms.Button();
-            this.lblLN_D = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.lblLN = new System.Windows.Forms.Label();
-            this.pbx_Corredor_Carga = new System.Windows.Forms.PictureBox();
-            this.lblFN_D = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.lblFN = new System.Windows.Forms.Label();
-            this.lblPMAG_D = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.lblPMAG = new System.Windows.Forms.Label();
-            this.lblPMAC_D = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.lblPMAC = new System.Windows.Forms.Label();
-            this.lblCM_D = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.lblCM = new System.Windows.Forms.Label();
-            this.lblgpc_D = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.lblgpc = new System.Windows.Forms.Label();
-            this.lblPuntos_D = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.lblpuntos = new System.Windows.Forms.Label();
-            this.lblPodios_D = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.lblpodio = new System.Windows.Forms.Label();
-            this.lblPais_D = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.lblPais = new System.Windows.Forms.Label();
-            this.lblEquipo_D = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.lblEquipo = new System.Windows.Forms.Label();
             this.PanelFiltros = new System.Windows.Forms.Panel();
-            this.btnAgregarCorredor = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.PBXCorredor = new System.Windows.Forms.PictureBox();
             this.MtxtFecha = new System.Windows.Forms.MaskedTextBox();
             this.TxtLugar = new System.Windows.Forms.TextBox();
@@ -78,25 +78,25 @@
             this.cbxOrdenadosFechaNacimiento = new System.Windows.Forms.CheckBox();
             this.ChxMayorCantidaddePodios = new System.Windows.Forms.CheckBox();
             this.chxCampeones = new System.Windows.Forms.CheckBox();
-            this.ddlFiltroPaises = new System.Windows.Forms.ComboBox();
+            this.CbxFiltroPaises = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGVCorredores)).BeginInit();
             this.PanelCorredores.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbx_Corredor_Carga)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PanelFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBXCorredor)).BeginInit();
             this.SuspendLayout();
             // 
-            // btn_Cerrar
+            // button1
             // 
-            this.btn_Cerrar.Location = new System.Drawing.Point(305, 19);
-            this.btn_Cerrar.Name = "btn_Cerrar";
-            this.btn_Cerrar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Cerrar.TabIndex = 0;
-            this.btn_Cerrar.Text = "X";
-            this.btn_Cerrar.UseVisualStyleBackColor = true;
-            this.btn_Cerrar.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Location = new System.Drawing.Point(679, -4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // DGVCorredores
             // 
@@ -128,7 +128,7 @@
             this.DGVCorredores.RowHeadersVisible = false;
             this.DGVCorredores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGVCorredores.ShowEditingIcon = false;
-            this.DGVCorredores.Size = new System.Drawing.Size(335, 505);
+            this.DGVCorredores.Size = new System.Drawing.Size(335, 507);
             this.DGVCorredores.TabIndex = 1;
             this.DGVCorredores.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGVCorredores_CellMouseClick);
             this.DGVCorredores.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.DGVCorredores_RowStateChanged);
@@ -139,67 +139,66 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PanelCorredores.BackColor = System.Drawing.Color.White;
-            this.PanelCorredores.Controls.Add(this.lblEquipo_Logo);
-            this.PanelCorredores.Controls.Add(this.btn_Cerrar);
-            this.PanelCorredores.Controls.Add(this.btnFiltros);
-            this.PanelCorredores.Controls.Add(this.lblLN_D);
+            this.PanelCorredores.Controls.Add(this.label15);
+            this.PanelCorredores.Controls.Add(this.button2);
+            this.PanelCorredores.Controls.Add(this.label3);
             this.PanelCorredores.Controls.Add(this.lblLN);
-            this.PanelCorredores.Controls.Add(this.pbx_Corredor_Carga);
-            this.PanelCorredores.Controls.Add(this.lblFN_D);
+            this.PanelCorredores.Controls.Add(this.pictureBox1);
+            this.PanelCorredores.Controls.Add(this.label18);
             this.PanelCorredores.Controls.Add(this.lblFN);
-            this.PanelCorredores.Controls.Add(this.lblPMAG_D);
+            this.PanelCorredores.Controls.Add(this.label16);
             this.PanelCorredores.Controls.Add(this.lblPMAG);
-            this.PanelCorredores.Controls.Add(this.lblPMAC_D);
+            this.PanelCorredores.Controls.Add(this.label14);
             this.PanelCorredores.Controls.Add(this.lblPMAC);
-            this.PanelCorredores.Controls.Add(this.lblCM_D);
+            this.PanelCorredores.Controls.Add(this.label12);
             this.PanelCorredores.Controls.Add(this.lblCM);
-            this.PanelCorredores.Controls.Add(this.lblgpc_D);
+            this.PanelCorredores.Controls.Add(this.label10);
             this.PanelCorredores.Controls.Add(this.lblgpc);
-            this.PanelCorredores.Controls.Add(this.lblPuntos_D);
+            this.PanelCorredores.Controls.Add(this.label8);
             this.PanelCorredores.Controls.Add(this.lblpuntos);
-            this.PanelCorredores.Controls.Add(this.lblPodios_D);
+            this.PanelCorredores.Controls.Add(this.label6);
             this.PanelCorredores.Controls.Add(this.lblpodio);
-            this.PanelCorredores.Controls.Add(this.lblPais_D);
+            this.PanelCorredores.Controls.Add(this.label4);
             this.PanelCorredores.Controls.Add(this.lblPais);
-            this.PanelCorredores.Controls.Add(this.lblEquipo_D);
+            this.PanelCorredores.Controls.Add(this.label2);
             this.PanelCorredores.Controls.Add(this.lblEquipo);
             this.PanelCorredores.Location = new System.Drawing.Point(353, 25);
             this.PanelCorredores.Name = "PanelCorredores";
-            this.PanelCorredores.Size = new System.Drawing.Size(653, 505);
+            this.PanelCorredores.Size = new System.Drawing.Size(653, 507);
             this.PanelCorredores.TabIndex = 2;
             this.PanelCorredores.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // lblEquipo_Logo
+            // label15
             // 
-            this.lblEquipo_Logo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblEquipo_Logo.AutoSize = true;
-            this.lblEquipo_Logo.Location = new System.Drawing.Point(25, 19);
-            this.lblEquipo_Logo.Name = "lblEquipo_Logo";
-            this.lblEquipo_Logo.Size = new System.Drawing.Size(40, 13);
-            this.lblEquipo_Logo.TabIndex = 22;
-            this.lblEquipo_Logo.Text = "Equipo";
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(25, 19);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(40, 13);
+            this.label15.TabIndex = 22;
+            this.label15.Text = "Equipo";
             // 
-            // btnFiltros
+            // button2
             // 
-            this.btnFiltros.Location = new System.Drawing.Point(305, 55);
-            this.btnFiltros.Name = "btnFiltros";
-            this.btnFiltros.Size = new System.Drawing.Size(86, 23);
-            this.btnFiltros.TabIndex = 21;
-            this.btnFiltros.Text = "Filtrar/Buscar";
-            this.btnFiltros.UseVisualStyleBackColor = true;
-            this.btnFiltros.Click += new System.EventHandler(this.BtnFiltros_Click);
+            this.button2.Location = new System.Drawing.Point(316, 19);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 21;
+            this.button2.Text = "X";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // lblLN_D
+            // label3
             // 
-            this.lblLN_D.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblLN_D.AutoSize = true;
-            this.lblLN_D.Location = new System.Drawing.Point(276, 390);
-            this.lblLN_D.Name = "lblLN_D";
-            this.lblLN_D.Size = new System.Drawing.Size(35, 13);
-            this.lblLN_D.TabIndex = 20;
-            this.lblLN_D.Text = "label3";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(276, 390);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "label3";
             // 
             // lblLN
             // 
@@ -212,27 +211,27 @@
             this.lblLN.TabIndex = 19;
             this.lblLN.Text = "Lugar de Nacimiento";
             // 
-            // pbx_Corredor_Carga
+            // pictureBox1
             // 
-            this.pbx_Corredor_Carga.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbx_Corredor_Carga.Location = new System.Drawing.Point(407, 3);
-            this.pbx_Corredor_Carga.Name = "pbx_Corredor_Carga";
-            this.pbx_Corredor_Carga.Size = new System.Drawing.Size(235, 486);
-            this.pbx_Corredor_Carga.TabIndex = 18;
-            this.pbx_Corredor_Carga.TabStop = false;
+            this.pictureBox1.Location = new System.Drawing.Point(407, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(235, 488);
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
             // 
-            // lblFN_D
+            // label18
             // 
-            this.lblFN_D.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblFN_D.AutoSize = true;
-            this.lblFN_D.Location = new System.Drawing.Point(276, 367);
-            this.lblFN_D.Name = "lblFN_D";
-            this.lblFN_D.Size = new System.Drawing.Size(41, 13);
-            this.lblFN_D.TabIndex = 17;
-            this.lblFN_D.Text = "label18";
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(276, 367);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(41, 13);
+            this.label18.TabIndex = 17;
+            this.label18.Text = "label18";
             // 
             // lblFN
             // 
@@ -245,16 +244,16 @@
             this.lblFN.TabIndex = 16;
             this.lblFN.Text = "Fecha de Nacimiento";
             // 
-            // lblPMAG_D
+            // label16
             // 
-            this.lblPMAG_D.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblPMAG_D.AutoSize = true;
-            this.lblPMAG_D.Location = new System.Drawing.Point(276, 341);
-            this.lblPMAG_D.Name = "lblPMAG_D";
-            this.lblPMAG_D.Size = new System.Drawing.Size(41, 13);
-            this.lblPMAG_D.TabIndex = 15;
-            this.lblPMAG_D.Text = "label16";
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(276, 341);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(41, 13);
+            this.label16.TabIndex = 15;
+            this.label16.Text = "label16";
             // 
             // lblPMAG
             // 
@@ -267,16 +266,16 @@
             this.lblPMAG.TabIndex = 14;
             this.lblPMAG.Text = "Posicion mas alta en la grilla";
             // 
-            // lblPMAC_D
+            // label14
             // 
-            this.lblPMAC_D.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblPMAC_D.AutoSize = true;
-            this.lblPMAC_D.Location = new System.Drawing.Point(276, 314);
-            this.lblPMAC_D.Name = "lblPMAC_D";
-            this.lblPMAC_D.Size = new System.Drawing.Size(41, 13);
-            this.lblPMAC_D.TabIndex = 13;
-            this.lblPMAC_D.Text = "label14";
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(276, 314);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(41, 13);
+            this.label14.TabIndex = 13;
+            this.label14.Text = "label14";
             // 
             // lblPMAC
             // 
@@ -289,16 +288,16 @@
             this.lblPMAC.TabIndex = 12;
             this.lblPMAC.Text = "Posicion mas alta al finalizar una carrera";
             // 
-            // lblCM_D
+            // label12
             // 
-            this.lblCM_D.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblCM_D.AutoSize = true;
-            this.lblCM_D.Location = new System.Drawing.Point(276, 291);
-            this.lblCM_D.Name = "lblCM_D";
-            this.lblCM_D.Size = new System.Drawing.Size(41, 13);
-            this.lblCM_D.TabIndex = 11;
-            this.lblCM_D.Text = "label12";
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(276, 291);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(41, 13);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "label12";
             // 
             // lblCM
             // 
@@ -311,16 +310,16 @@
             this.lblCM.TabIndex = 10;
             this.lblCM.Text = "Campeonatos Mundiales";
             // 
-            // lblgpc_D
+            // label10
             // 
-            this.lblgpc_D.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblgpc_D.AutoSize = true;
-            this.lblgpc_D.Location = new System.Drawing.Point(276, 266);
-            this.lblgpc_D.Name = "lblgpc_D";
-            this.lblgpc_D.Size = new System.Drawing.Size(41, 13);
-            this.lblgpc_D.TabIndex = 9;
-            this.lblgpc_D.Text = "label10";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(276, 266);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 13);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "label10";
             // 
             // lblgpc
             // 
@@ -333,16 +332,16 @@
             this.lblgpc.TabIndex = 8;
             this.lblgpc.Text = "Grand Prix Competidos";
             // 
-            // lblPuntos_D
+            // label8
             // 
-            this.lblPuntos_D.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblPuntos_D.AutoSize = true;
-            this.lblPuntos_D.Location = new System.Drawing.Point(276, 237);
-            this.lblPuntos_D.Name = "lblPuntos_D";
-            this.lblPuntos_D.Size = new System.Drawing.Size(35, 13);
-            this.lblPuntos_D.TabIndex = 7;
-            this.lblPuntos_D.Text = "label8";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(276, 237);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "label8";
             // 
             // lblpuntos
             // 
@@ -355,16 +354,16 @@
             this.lblpuntos.TabIndex = 6;
             this.lblpuntos.Text = "Puntos";
             // 
-            // lblPodios_D
+            // label6
             // 
-            this.lblPodios_D.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblPodios_D.AutoSize = true;
-            this.lblPodios_D.Location = new System.Drawing.Point(276, 212);
-            this.lblPodios_D.Name = "lblPodios_D";
-            this.lblPodios_D.Size = new System.Drawing.Size(35, 13);
-            this.lblPodios_D.TabIndex = 5;
-            this.lblPodios_D.Text = "label6";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(276, 212);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "label6";
             // 
             // lblpodio
             // 
@@ -377,16 +376,16 @@
             this.lblpodio.TabIndex = 4;
             this.lblpodio.Text = "Podios";
             // 
-            // lblPais_D
+            // label4
             // 
-            this.lblPais_D.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblPais_D.AutoSize = true;
-            this.lblPais_D.Location = new System.Drawing.Point(276, 190);
-            this.lblPais_D.Name = "lblPais_D";
-            this.lblPais_D.Size = new System.Drawing.Size(35, 13);
-            this.lblPais_D.TabIndex = 3;
-            this.lblPais_D.Text = "label4";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(276, 190);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "label4";
             // 
             // lblPais
             // 
@@ -399,16 +398,16 @@
             this.lblPais.TabIndex = 2;
             this.lblPais.Text = "Pais";
             // 
-            // lblEquipo_D
+            // label2
             // 
-            this.lblEquipo_D.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblEquipo_D.AutoSize = true;
-            this.lblEquipo_D.Location = new System.Drawing.Point(276, 162);
-            this.lblEquipo_D.Name = "lblEquipo_D";
-            this.lblEquipo_D.Size = new System.Drawing.Size(35, 13);
-            this.lblEquipo_D.TabIndex = 1;
-            this.lblEquipo_D.Text = "label2";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(276, 162);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "label2";
             // 
             // lblEquipo
             // 
@@ -427,7 +426,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PanelFiltros.BackColor = System.Drawing.Color.White;
-            this.PanelFiltros.Controls.Add(this.btnAgregarCorredor);
+            this.PanelFiltros.Controls.Add(this.button3);
             this.PanelFiltros.Controls.Add(this.PBXCorredor);
             this.PanelFiltros.Controls.Add(this.MtxtFecha);
             this.PanelFiltros.Controls.Add(this.TxtLugar);
@@ -447,23 +446,23 @@
             this.PanelFiltros.Controls.Add(this.cbxOrdenadosFechaNacimiento);
             this.PanelFiltros.Controls.Add(this.ChxMayorCantidaddePodios);
             this.PanelFiltros.Controls.Add(this.chxCampeones);
-            this.PanelFiltros.Controls.Add(this.ddlFiltroPaises);
+            this.PanelFiltros.Controls.Add(this.CbxFiltroPaises);
             this.PanelFiltros.Controls.Add(this.label22);
             this.PanelFiltros.Controls.Add(this.label30);
             this.PanelFiltros.Location = new System.Drawing.Point(353, 25);
             this.PanelFiltros.Name = "PanelFiltros";
-            this.PanelFiltros.Size = new System.Drawing.Size(653, 505);
+            this.PanelFiltros.Size = new System.Drawing.Size(653, 507);
             this.PanelFiltros.TabIndex = 3;
             // 
-            // btnAgregarCorredor
+            // button3
             // 
-            this.btnAgregarCorredor.Location = new System.Drawing.Point(549, 19);
-            this.btnAgregarCorredor.Name = "btnAgregarCorredor";
-            this.btnAgregarCorredor.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregarCorredor.TabIndex = 42;
-            this.btnAgregarCorredor.Text = "Agregar";
-            this.btnAgregarCorredor.UseVisualStyleBackColor = true;
-            this.btnAgregarCorredor.Click += new System.EventHandler(this.btnAgregarCorredor_Click);
+            this.button3.Location = new System.Drawing.Point(549, 19);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 42;
+            this.button3.Text = "Agregar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // PBXCorredor
             // 
@@ -473,7 +472,7 @@
             this.PBXCorredor.Image = ((System.Drawing.Image)(resources.GetObject("PBXCorredor.Image")));
             this.PBXCorredor.Location = new System.Drawing.Point(417, 231);
             this.PBXCorredor.Name = "PBXCorredor";
-            this.PBXCorredor.Size = new System.Drawing.Size(226, 258);
+            this.PBXCorredor.Size = new System.Drawing.Size(226, 260);
             this.PBXCorredor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PBXCorredor.TabIndex = 41;
             this.PBXCorredor.TabStop = false;
@@ -615,8 +614,6 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.panel1.Location = new System.Drawing.Point(397, 0);
             this.panel1.Name = "panel1";
@@ -632,7 +629,7 @@
             this.chxPais.TabIndex = 28;
             this.chxPais.Text = "Por pais";
             this.chxPais.UseVisualStyleBackColor = true;
-            this.chxPais.CheckedChanged += new System.EventHandler(this.chxPais_CheckedChanged);
+            this.chxPais.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
             // 
             // chxOrdenadosPuntos
             // 
@@ -661,7 +658,7 @@
             this.cbxOrdenadosFechaNacimiento.TabIndex = 24;
             this.cbxOrdenadosFechaNacimiento.Text = "Ordenados por fecha de nacimiento";
             this.cbxOrdenadosFechaNacimiento.UseVisualStyleBackColor = true;
-            this.cbxOrdenadosFechaNacimiento.CheckedChanged += new System.EventHandler(this.cbxOrdenadosFechaNacimiento_CheckedChanged);
+            this.cbxOrdenadosFechaNacimiento.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // ChxMayorCantidaddePodios
             // 
@@ -683,16 +680,16 @@
             this.chxCampeones.Text = "Solo Campeones";
             this.chxCampeones.UseVisualStyleBackColor = true;
             // 
-            // ddlFiltroPaises
+            // CbxFiltroPaises
             // 
-            this.ddlFiltroPaises.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ddlFiltroPaises.FormattingEnabled = true;
-            this.ddlFiltroPaises.Location = new System.Drawing.Point(161, 62);
-            this.ddlFiltroPaises.Name = "ddlFiltroPaises";
-            this.ddlFiltroPaises.Size = new System.Drawing.Size(121, 21);
-            this.ddlFiltroPaises.Sorted = true;
-            this.ddlFiltroPaises.TabIndex = 21;
-            this.ddlFiltroPaises.SelectedIndexChanged += new System.EventHandler(this.ddlFiltroPaises_SelectedIndexChanged);
+            this.CbxFiltroPaises.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbxFiltroPaises.FormattingEnabled = true;
+            this.CbxFiltroPaises.Location = new System.Drawing.Point(161, 62);
+            this.CbxFiltroPaises.Name = "CbxFiltroPaises";
+            this.CbxFiltroPaises.Size = new System.Drawing.Size(121, 21);
+            this.CbxFiltroPaises.Sorted = true;
+            this.CbxFiltroPaises.TabIndex = 21;
+            this.CbxFiltroPaises.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label22
             // 
@@ -721,8 +718,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.ClientSize = new System.Drawing.Size(1018, 559);
+            this.ClientSize = new System.Drawing.Size(1018, 561);
             this.Controls.Add(this.DGVCorredores);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.PanelFiltros);
             this.Controls.Add(this.PanelCorredores);
             this.Name = "Corredores";
@@ -731,7 +729,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGVCorredores)).EndInit();
             this.PanelCorredores.ResumeLayout(false);
             this.PanelCorredores.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbx_Corredor_Carga)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PanelFiltros.ResumeLayout(false);
             this.PanelFiltros.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBXCorredor)).EndInit();
@@ -741,38 +739,38 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btn_Cerrar;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView DGVCorredores;
         private System.Windows.Forms.Panel PanelCorredores;
-        private System.Windows.Forms.PictureBox pbx_Corredor_Carga;
-        private System.Windows.Forms.Label lblFN_D;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label lblFN;
-        private System.Windows.Forms.Label lblPMAG_D;
+        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label lblPMAG;
-        private System.Windows.Forms.Label lblPMAC_D;
+        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label lblPMAC;
-        private System.Windows.Forms.Label lblCM_D;
+        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lblCM;
-        private System.Windows.Forms.Label lblgpc_D;
+        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblgpc;
-        private System.Windows.Forms.Label lblPuntos_D;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblpuntos;
-        private System.Windows.Forms.Label lblPodios_D;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblpodio;
-        private System.Windows.Forms.Label lblPais_D;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblPais;
-        private System.Windows.Forms.Label lblEquipo_D;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblEquipo;
-        private System.Windows.Forms.Label lblLN_D;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblLN;
-        private System.Windows.Forms.Button btnFiltros;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel PanelFiltros;
         private System.Windows.Forms.CheckBox chxOrdenadosPuntos;
         private System.Windows.Forms.ComboBox CbxFiltroTemporada;
         private System.Windows.Forms.CheckBox cbxOrdenadosFechaNacimiento;
         private System.Windows.Forms.CheckBox ChxMayorCantidaddePodios;
         private System.Windows.Forms.CheckBox chxCampeones;
-        private System.Windows.Forms.ComboBox ddlFiltroPaises;
+        private System.Windows.Forms.ComboBox CbxFiltroPaises;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.CheckBox chxPais;
@@ -789,7 +787,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.MaskedTextBox MtxtFecha;
         private System.Windows.Forms.PictureBox PBXCorredor;
-        private System.Windows.Forms.Label lblEquipo_Logo;
-        private System.Windows.Forms.Button btnAgregarCorredor;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button button3;
     }
 }

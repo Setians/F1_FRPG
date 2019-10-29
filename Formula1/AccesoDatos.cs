@@ -26,7 +26,7 @@ namespace Formula1
 
         public AccesoDatos()
         {
-            conexion = new SqlConnection("data source=localhost\\SQLEXPRESSSS; initial catalog=Formula_1; integrated security=true");
+            conexion = new SqlConnection("data source=localhost\\sqlexpressss; initial catalog=Formula_1; integrated security=true");
             comando = new SqlCommand();
             comando.Connection = conexion;
         }
