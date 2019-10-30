@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
 using System.Drawing.Text;
+using Formula1.Clases;
+using Formula1.Gestion;
 
 namespace Formula1
 {
@@ -121,7 +123,7 @@ namespace Formula1
                 conexion.Llenar_Label(consulta, lblLN_D, "LugarN_Corredor");
                 consulta = "Select Imagen_Corredor from F1_Corredores where ID_Corredor = " + row.Cells["ID"].Value.ToString();
                 conexion.Llenar_Label(consulta, lblPodios_D, "Imagen_Corredor");
-                string imagepath = lblPodios_D.Text;
+                string imagepath = Path.Combine(Application.StartupPath, @"..\..\..\" + lblPodios_D.Text);
                 lblPodios_D.Text = "label6";
                 pbx_Corredor_Carga.Image = Image.FromFile(imagepath);
                 pbx_Corredor_Carga.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -149,7 +151,7 @@ namespace Formula1
                 conexion.Llenar_Label(consulta, lblLN_D, "LugarN_Corredor");
                 consulta = "Select Imagen_Corredor from F1_Corredores where ID_Corredor = " + row.Cells["ID"].Value.ToString();
                 conexion.Llenar_Label(consulta, lblPodios_D, "Imagen_Corredor");
-                string imagepath = lblPodios_D.Text;
+                string imagepath = Path.Combine(Application.StartupPath, @"..\..\..\" + lblPodios_D.Text);
                 lblPodios_D.Text = "label6";
                 pbx_Corredor_Carga.Image = Image.FromFile(imagepath);
                 pbx_Corredor_Carga.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -210,8 +212,8 @@ namespace Formula1
                 File.Copy(PBXCorredor.ImageLocation.ToString(), Destino ,true);
                 
             }
-            
-            g.CargarCorredor(TxtNombre.Text, TxtApellido.Text, TxtLugar.Text, TxtPais.Text, DateTime.Parse(MtxtFecha.Text), Destino);
+            Corredor corredor = new Corredor(TxtNombre.Text, TxtApellido.Text, TxtLugar.Text, TxtPais.Text, DateTime.Parse(MtxtFecha.Text), Destino);
+            g.CargarCorredor(corredor);
             MessageBox.Show("El registro se cargo correctamente","",MessageBoxButtons.OK);
             llenarDgv();
         }

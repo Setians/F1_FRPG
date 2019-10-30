@@ -47,7 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
-    <Compile Include="Corredor.cs" />
+    <Compile Include="Clases\Carrera.cs" />
+    <Compile Include="Clases\Circuito.cs" />
+    <Compile Include="Clases\Corredor.cs" />
+    <Compile Include="Clases\Equipo.cs" />
+    <Compile Include="Clases\Temporada.cs" />
     <Compile Include="MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,7 +64,7 @@
     <Compile Include="Corredores.Designer.cs">
       <DependentUpon>Corredores.cs</DependentUpon>
     </Compile>
-    <Compile Include="GestionCorredor.cs" />
+    <Compile Include="Gestion\GestionCorredor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VisorImagenes.cs">
