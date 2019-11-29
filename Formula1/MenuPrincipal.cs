@@ -169,6 +169,13 @@ namespace Formula1
             BtnCorredores.BackColor= Color.FromArgb(204, 204, 204);
             
         }
+
+        private void BtnCircuitos_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel<Circuitos>();
+            BtnCircuitos.BackColor = Color.FromArgb(204, 204, 204);
+        }
+
         //METODO PARA ABRIR FORM DENTRO DE PANEL-----------------------------------------------------
         private void AbrirFormEnPanel<Forms>() where Forms : Form, new()
         {
@@ -208,8 +215,8 @@ namespace Formula1
         {
             if (Application.OpenForms["Form2"] == null)
                 BtnCorredores.BackColor = Color.White;
-            //if (Application.OpenForms["Form2"] == null)
-              //  BtnCircuitos.BackColor = Color.FromArgb(204, 204, 204);
+            if (Application.OpenForms["Form3"] == null)
+                BtnCircuitos.BackColor = Color.White;
             //if (Application.OpenForms["Form3"] == null)
               //  btnEscuderias.BackColor = Color.FromArgb(204, 204, 204);
         }

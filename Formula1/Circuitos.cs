@@ -29,10 +29,10 @@ namespace Formula1
         private void llenarDgv()
         {
             AccesoDatos conexion = new AccesoDatos();
-            string consulta = "Select ID_Corredor as ID, (Nombre_Corredor+ ' '+ Apellido_Corredor )as Nombre from F1_Corredores";
+            string consulta = "Select ID_Circuito as ID, (Nombre_Circuito) as Nombre from F1_Circuitos";
             string order = " order by id asc";
             consulta = consulta + order;
-            DGVCorredores.DataSource = conexion.LlenarDataGridViewConsulta(consulta);
+            DGVCircuitos.DataSource = conexion.LlenarDataGridViewConsulta(consulta);
             conexion.cerrarConexion();
         }
 
@@ -54,8 +54,8 @@ namespace Formula1
                 order = " order by CONVERT( VARCHAR , FechaN_Corredor , 112 ) desc";
             }
             consulta = consulta + where + order;
-            DGVCorredores.DataSource = a.LlenarDataGridViewConsulta(consulta);
-            DGVCorredores.ClearSelection();
+            DGVCircuitos.DataSource = a.LlenarDataGridViewConsulta(consulta);
+            DGVCircuitos.ClearSelection();
             a.cerrarConexion();
         }
 
@@ -73,19 +73,12 @@ namespace Formula1
             label30.Font = new Font(pfc.Families[0], Convert.ToSingle(10), FontStyle.Regular);
             fontPath = Path.Combine(Application.StartupPath, @"..\..\..\" + "F1 Font Files (with important Message)\\Formula1-Regular.otf");
             pfc.AddFontFile(fontPath);
-            DGVCorredores.DefaultCellStyle.Font = new Font(pfc.Families[1], Convert.ToSingle(8.10), FontStyle.Regular);
-            DGVCorredores.AlternatingRowsDefaultCellStyle.Font = new Font(pfc.Families[1], Convert.ToSingle(8.10), FontStyle.Regular);
+            DGVCircuitos.DefaultCellStyle.Font = new Font(pfc.Families[1], Convert.ToSingle(8.10), FontStyle.Regular);
+            DGVCircuitos.AlternatingRowsDefaultCellStyle.Font = new Font(pfc.Families[1], Convert.ToSingle(8.10), FontStyle.Regular);
 
-            lblEquipo_D.Font = new Font(pfc.Families[1], Convert.ToSingle(8.10), FontStyle.Regular);
             lblPais_D.Font = new Font(pfc.Families[1], Convert.ToSingle(8.10), FontStyle.Regular);
-            lblPodios_D.Font = new Font(pfc.Families[1], Convert.ToSingle(8.10), FontStyle.Regular);
+            lblLongitud_D.Font = new Font(pfc.Families[1], Convert.ToSingle(8.10), FontStyle.Regular);
             lblPuntos_D.Font = new Font(pfc.Families[1], Convert.ToSingle(8.10), FontStyle.Regular);
-            lblgpc_D.Font = new Font(pfc.Families[1], Convert.ToSingle(8.10), FontStyle.Regular);
-            lblCM_D.Font = new Font(pfc.Families[1], Convert.ToSingle(8.10), FontStyle.Regular);
-            lblPMAC_D.Font = new Font(pfc.Families[1], Convert.ToSingle(8.10), FontStyle.Regular);
-            lblPMAG_D.Font = new Font(pfc.Families[1], Convert.ToSingle(8.10), FontStyle.Regular);
-            lblFN_D.Font = new Font(pfc.Families[1], Convert.ToSingle(8.10), FontStyle.Regular);
-            lblLN_D.Font = new Font(pfc.Families[1], Convert.ToSingle(8.10), FontStyle.Regular);
         }
 
 
@@ -95,65 +88,35 @@ namespace Formula1
 
         }
 
-        private void Corredores_Load(object sender, EventArgs e)
+        private void Circuitos_Load(object sender, EventArgs e)
         {
             //Se llena la DGV con todos los corredores ordenados por id.
             llenarDgv();
             //Se establece la fuente a todos los controles de esta form
             Fuente();
-            DGVCorredores.Focus();
+            DGVCircuitos.Focus();
             PanelFiltros.Hide();
 
         }
 
-        private void DGVCorredores_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                PanelCorredores.Show();
-                DataGridViewRow row = this.DGVCorredores.Rows[e.RowIndex];
-                AccesoDatos a = new AccesoDatos();
-                AccesoDatos conexion = new AccesoDatos();
-                string consulta = "Select Pais_Corredor from F1_Corredores where F1_Corredores.ID_Corredor = " + row.Cells["ID"].Value.ToString();
-                conexion.Llenar_Label(consulta, lblPais_D, "Pais_Corredor");
-                consulta = "Select CONVERT( VARCHAR , FechaN_Corredor , 103 )as fecha from F1_Corredores where F1_Corredores.ID_Corredor = " + row.Cells["ID"].Value.ToString();
-                conexion.Llenar_Label(consulta, lblFN_D, "fecha");
-                consulta = "Select LugarN_Corredor from F1_Corredores where F1_Corredores.ID_Corredor = " + row.Cells["ID"].Value.ToString();
-                conexion.Llenar_Label(consulta, lblLN_D, "LugarN_Corredor");
-                consulta = "Select Imagen_Corredor from F1_Corredores where ID_Corredor = " + row.Cells["ID"].Value.ToString();
-                conexion.Llenar_Label(consulta, lblPodios_D, "Imagen_Corredor");
-                string imagepath = Path.Combine(Application.StartupPath, @"..\..\..\" + lblPodios_D.Text);
-                lblPodios_D.Text = "label6";
-                pbx_Corredor_Carga.Image = Image.FromFile(imagepath);
-                pbx_Corredor_Carga.SizeMode = PictureBoxSizeMode.StretchImage;
-                conexion.cerrarConexion();
-
-
-            }
-        }
-
-        private void DGVCorredores_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
+        private void DGVCircuitos_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
         {
             if (e.Row.Index >= 0 && e.Row.Selected == true)
             {
                 PanelCorredores.Show();
 
                 PanelFiltros.Hide();
-                DataGridViewRow row = this.DGVCorredores.Rows[e.Row.Index];
+                DataGridViewRow row = this.DGVCircuitos.Rows[e.Row.Index];
                 AccesoDatos a = new AccesoDatos();
                 AccesoDatos conexion = new AccesoDatos();
                 string consulta = "Select Pais_Corredor from F1_Corredores where F1_Corredores.ID_Corredor = " + row.Cells["ID"].Value.ToString();
-                conexion.Llenar_Label(consulta, lblPais_D, "Pais_Corredor");
-                consulta = "Select CONVERT( VARCHAR , FechaN_Corredor , 103 )as fecha from F1_Corredores where F1_Corredores.ID_Corredor = " + row.Cells["ID"].Value.ToString();
-                conexion.Llenar_Label(consulta, lblFN_D, "fecha");
-                consulta = "Select LugarN_Corredor from F1_Corredores where F1_Corredores.ID_Corredor = " + row.Cells["ID"].Value.ToString();
-                conexion.Llenar_Label(consulta, lblLN_D, "LugarN_Corredor");
+                conexion.Llenar_Label(consulta, lblPais_D, "Pais_Circuito");
                 consulta = "Select Imagen_Corredor from F1_Corredores where ID_Corredor = " + row.Cells["ID"].Value.ToString();
-                conexion.Llenar_Label(consulta, lblPodios_D, "Imagen_Corredor");
-                string imagepath = Path.Combine(Application.StartupPath, @"..\..\..\" + lblPodios_D.Text);
-                lblPodios_D.Text = "label6";
-                pbx_Corredor_Carga.Image = Image.FromFile(imagepath);
-                pbx_Corredor_Carga.SizeMode = PictureBoxSizeMode.StretchImage;
+                conexion.Llenar_Label(consulta, lblLongitud_D, "Longitud");
+                string imagepath = Path.Combine(Application.StartupPath, @"..\..\..\" + lblLongitud_D.Text);
+                lblLongitud_D.Text = "label6";
+              //  pbx_Corredor_Carga.Image = Image.FromFile(imagepath);
+               // pbx_Corredor_Carga.SizeMode = PictureBoxSizeMode.StretchImage;
                 conexion.cerrarConexion();
 
 
@@ -163,7 +126,7 @@ namespace Formula1
 
         private void BtnFiltros_Click(object sender, EventArgs e)
         {
-            DGVCorredores.ClearSelection();
+            DGVCircuitos.ClearSelection();
             PanelCorredores.Hide();
             PanelFiltros.Show();
 
@@ -198,17 +161,17 @@ namespace Formula1
             Filtros();
         }
 
-        private void btnAgregarCorredor_Click(object sender, EventArgs e)
+        private void btnAgregarCircuito_Click(object sender, EventArgs e)
         {
             GestionCircuito g = new GestionCircuito();
             string imagepath = Path.Combine(Application.StartupPath, @"..\..\..\" + "imagenes\\Corredores\\");
             string Destino = "";
-            if (File.Exists(PBXCorredor.ImageLocation.ToString()))
+            if (File.Exists(PBXCircuito.ImageLocation.ToString()))
             {
-                string ruta = PBXCorredor.ImageLocation.ToString();
+                string ruta = PBXCircuito.ImageLocation.ToString();
                 string[] extencion = ruta.Split('.');
                 Destino = imagepath + TxtNombre.Text + TxtApellido.Text + '.' + extencion[1];
-                File.Copy(PBXCorredor.ImageLocation.ToString(), Destino, true);
+                File.Copy(PBXCircuito.ImageLocation.ToString(), Destino, true);
 
             }
             Circuito corredor = new Circuito(DateTime.Parse(MtxtFecha.Text),TxtNombre.Text, TxtPais.Text, TxtLugar.Text, Destino);
@@ -217,7 +180,7 @@ namespace Formula1
             llenarDgv();
         }
 
-        private void PBXCorredor_Click(object sender, EventArgs e)
+        private void PBXCircuito_Click(object sender, EventArgs e)
         {
             OpenFileDialog ObtenerImagen = new OpenFileDialog();
             ObtenerImagen.InitialDirectory = "C:\\Users\\Public\\Pictures";
@@ -225,7 +188,7 @@ namespace Formula1
 
             if (ObtenerImagen.ShowDialog() == DialogResult.OK)
             {
-                PBXCorredor.ImageLocation = ObtenerImagen.FileName;
+                PBXCircuito.ImageLocation = ObtenerImagen.FileName;
 
             }
             else
@@ -233,5 +196,11 @@ namespace Formula1
                 MessageBox.Show("No se selecciono imagen", "Sin Seleccion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+
+        private void DGVCircuitos_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+        }
+
     }
 }

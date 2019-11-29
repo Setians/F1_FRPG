@@ -47,11 +47,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
+    <Compile Include="Circuitos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Circuitos.Designer.cs">
+      <DependentUpon>Circuitos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clases\Carrera.cs" />
     <Compile Include="Clases\Circuito.cs" />
     <Compile Include="Clases\Corredor.cs" />
     <Compile Include="Clases\Equipo.cs" />
     <Compile Include="Clases\Temporada.cs" />
+    <Compile Include="Gestion\GestionCircuito.cs" />
     <Compile Include="MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +80,9 @@
     <Compile Include="VisorImagenes.Designer.cs">
       <DependentUpon>VisorImagenes.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Circuitos.resx">
+      <DependentUpon>Circuitos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>

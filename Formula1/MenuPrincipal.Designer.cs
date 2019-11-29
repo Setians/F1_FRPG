@@ -180,7 +180,7 @@
             this.BtnCorredores.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BtnCorredores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.BtnCorredores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCorredores.Font = new System.Drawing.Font("Formula1 Display Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCorredores.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCorredores.Image = ((System.Drawing.Image)(resources.GetObject("BtnCorredores.Image")));
             this.BtnCorredores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnCorredores.Location = new System.Drawing.Point(0, 83);
@@ -199,7 +199,7 @@
             this.btnEscuderias.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnEscuderias.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnEscuderias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEscuderias.Font = new System.Drawing.Font("Formula1 Display Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEscuderias.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEscuderias.Image = ((System.Drawing.Image)(resources.GetObject("btnEscuderias.Image")));
             this.btnEscuderias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEscuderias.Location = new System.Drawing.Point(0, 266);
@@ -217,7 +217,7 @@
             this.BtnTorneos.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BtnTorneos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.BtnTorneos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnTorneos.Font = new System.Drawing.Font("Formula1 Display Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnTorneos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnTorneos.Image = ((System.Drawing.Image)(resources.GetObject("BtnTorneos.Image")));
             this.BtnTorneos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnTorneos.Location = new System.Drawing.Point(0, 205);
@@ -235,7 +235,7 @@
             this.BtnCircuitos.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BtnCircuitos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.BtnCircuitos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCircuitos.Font = new System.Drawing.Font("Formula1 Display Bold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCircuitos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCircuitos.Image = ((System.Drawing.Image)(resources.GetObject("BtnCircuitos.Image")));
             this.BtnCircuitos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnCircuitos.Location = new System.Drawing.Point(0, 144);
@@ -244,6 +244,7 @@
             this.BtnCircuitos.TabIndex = 2;
             this.BtnCircuitos.Text = "Circuitos";
             this.BtnCircuitos.UseVisualStyleBackColor = true;
+            this.BtnCircuitos.Click += new System.EventHandler(this.BtnCircuitos_Click);
             // 
             // PBLogo
             // 
