@@ -43,10 +43,10 @@ namespace Formula1
            "Select ID_Corredor as ID, (Nombre_Corredor+ ' '+ Apellido_Corredor )as Nombre" +
            " from F1_Corredores ";
             string where = " ";
-            if (chxPais.Checked == true)
-            {
-                where = "where Pais_Corredor = " + "'" + ddlFiltroPaises.SelectedItem.ToString() + "' ";
-            }
+            //if (chxPais.Checked == true)
+            //{
+            //    where = "where Pais_Corredor = " + "'" + ddlFiltroPaises.SelectedItem.ToString() + "' ";
+            //}
 
             string order = " order by id asc";
             if (cbxOrdenadosFechaNacimiento.Checked == true)
@@ -70,7 +70,7 @@ namespace Formula1
             }
 
             label1.Font = new Font(pfc.Families[0], Convert.ToSingle(10), FontStyle.Regular);
-            label30.Font = new Font(pfc.Families[0], Convert.ToSingle(10), FontStyle.Regular);
+            //label30.Font = new Font(pfc.Families[0], Convert.ToSingle(10), FontStyle.Regular);
             fontPath = Path.Combine(Application.StartupPath, @"..\..\..\" + "F1 Font Files (with important Message)\\Formula1-Regular.otf");
             pfc.AddFontFile(fontPath);
             DGVCircuitos.DefaultCellStyle.Font = new Font(pfc.Families[1], Convert.ToSingle(8.10), FontStyle.Regular);
@@ -78,7 +78,7 @@ namespace Formula1
 
             lblPais_D.Font = new Font(pfc.Families[1], Convert.ToSingle(8.10), FontStyle.Regular);
             lblLongitud_D.Font = new Font(pfc.Families[1], Convert.ToSingle(8.10), FontStyle.Regular);
-            lblPuntos_D.Font = new Font(pfc.Families[1], Convert.ToSingle(8.10), FontStyle.Regular);
+            lblPGP_D.Font = new Font(pfc.Families[1], Convert.ToSingle(8.10), FontStyle.Regular);
         }
 
 
@@ -104,22 +104,26 @@ namespace Formula1
             if (e.Row.Index >= 0 && e.Row.Selected == true)
             {
                 PanelCorredores.Show();
-
                 PanelFiltros.Hide();
                 DataGridViewRow row = this.DGVCircuitos.Rows[e.Row.Index];
-                AccesoDatos a = new AccesoDatos();
                 AccesoDatos conexion = new AccesoDatos();
-                string consulta = "Select Pais_Corredor from F1_Corredores where F1_Corredores.ID_Corredor = " + row.Cells["ID"].Value.ToString();
-                conexion.Llenar_Label(consulta, lblPais_D, "Pais_Circuito");
-                consulta = "Select Imagen_Corredor from F1_Corredores where ID_Corredor = " + row.Cells["ID"].Value.ToString();
-                conexion.Llenar_Label(consulta, lblLongitud_D, "Longitud");
-                string imagepath = Path.Combine(Application.StartupPath, @"..\..\..\" + lblLongitud_D.Text);
-                lblLongitud_D.Text = "label6";
-              //  pbx_Corredor_Carga.Image = Image.FromFile(imagepath);
-               // pbx_Corredor_Carga.SizeMode = PictureBoxSizeMode.StretchImage;
+                GestionCircuito gestionCircuito = new GestionCircuito();
+                string id = row.Cells["ID"].Value.ToString();
+                lblPais_D.Text = gestionCircuito.ObtenerPais(id);
+                lblLongitud_D.Text = gestionCircuito.ObtenerLongitud(id);
+                lblPGP_D.Text= gestionCircuito.ObtenerPrimerGP(id);
+                lblNombre.Text = gestionCircuito.ObtenerNombre(id);
+                if (gestionCircuito.ObtenerImagen(id) != null)
+                {
+                    string imagepath = Path.Combine(Application.StartupPath, @"..\..\..\" + gestionCircuito.ObtenerImagen(id));
+                    pbx_Circuito_Carga.Image = Image.FromFile(imagepath);
+                    pbx_Circuito_Carga.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+                else
+                {
+                    pbx_Circuito_Carga.Image = null;
+                }
                 conexion.cerrarConexion();
-
-
             }
 
         }
@@ -135,19 +139,19 @@ namespace Formula1
         private void chxPais_CheckedChanged(object sender, EventArgs e)
         {
 
-            AccesoDatos a = new AccesoDatos();
-            string consulta = "Select DISTINCT Pais_Corredor from F1_Corredores";
-            if (chxPais.Checked == true)
-            {
-                a.llenarCbx(consulta, ddlFiltroPaises, "Pais_Corredor");
+            //AccesoDatos a = new AccesoDatos();
+            //string consulta = "Select DISTINCT Pais_Corredor from F1_Corredores";
+            //if (chxPais.Checked == true)
+            //{
+            //    a.llenarCbx(consulta, ddlFiltroPaises, "Pais_Corredor");
 
-            }
-            else
-            {
-                ddlFiltroPaises.Items.Clear();
-                Filtros();
-            }
-            a.cerrarConexion();
+            //}
+            //else
+            //{
+            //    ddlFiltroPaises.Items.Clear();
+            //    Filtros();
+            //}
+            //a.cerrarConexion();
         }
 
         private void ddlFiltroPaises_SelectedIndexChanged(object sender, EventArgs e)
@@ -174,7 +178,7 @@ namespace Formula1
                 File.Copy(PBXCircuito.ImageLocation.ToString(), Destino, true);
 
             }
-            Circuito corredor = new Circuito(DateTime.Parse(MtxtFecha.Text),TxtNombre.Text, TxtPais.Text, TxtLugar.Text, Destino);
+            Circuito corredor = new Circuito(MtxtFecha.Text,TxtNombre.Text, TxtPais.Text, TxtLugar.Text, Destino);
             g.CargarCircuito(corredor);
             MessageBox.Show("El registro se cargo correctamente", "", MessageBoxButtons.OK);
             llenarDgv();

@@ -33,9 +33,10 @@
             this.btn_Cerrar = new System.Windows.Forms.Button();
             this.DGVCircuitos = new System.Windows.Forms.DataGridView();
             this.PanelCorredores = new System.Windows.Forms.Panel();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.btnFiltros = new System.Windows.Forms.Button();
-            this.pbx_Corredor_Carga = new System.Windows.Forms.PictureBox();
-            this.lblPuntos_D = new System.Windows.Forms.Label();
+            this.pbx_Circuito_Carga = new System.Windows.Forms.PictureBox();
+            this.lblPGP_D = new System.Windows.Forms.Label();
             this.lblPrimerGP = new System.Windows.Forms.Label();
             this.lblLongitud_D = new System.Windows.Forms.Label();
             this.lblLongitud = new System.Windows.Forms.Label();
@@ -56,26 +57,20 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.chxPais = new System.Windows.Forms.CheckBox();
-            this.chxOrdenadosPuntos = new System.Windows.Forms.CheckBox();
             this.CbxFiltroTemporada = new System.Windows.Forms.ComboBox();
             this.cbxOrdenadosFechaNacimiento = new System.Windows.Forms.CheckBox();
             this.ChxMayorCantidaddePodios = new System.Windows.Forms.CheckBox();
-            this.chxCampeones = new System.Windows.Forms.CheckBox();
-            this.ddlFiltroPaises = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.lblNombre = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGVCircuitos)).BeginInit();
             this.PanelCorredores.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbx_Corredor_Carga)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_Circuito_Carga)).BeginInit();
             this.PanelFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBXCircuito)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Cerrar
             // 
-            this.btn_Cerrar.Location = new System.Drawing.Point(305, 19);
+            this.btn_Cerrar.Location = new System.Drawing.Point(11, 14);
             this.btn_Cerrar.Name = "btn_Cerrar";
             this.btn_Cerrar.Size = new System.Drawing.Size(75, 23);
             this.btn_Cerrar.TabIndex = 0;
@@ -124,25 +119,35 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PanelCorredores.BackColor = System.Drawing.Color.White;
-            this.PanelCorredores.Controls.Add(this.lblNombre);
-            this.PanelCorredores.Controls.Add(this.btn_Cerrar);
             this.PanelCorredores.Controls.Add(this.btnFiltros);
-            this.PanelCorredores.Controls.Add(this.pbx_Corredor_Carga);
-            this.PanelCorredores.Controls.Add(this.lblPuntos_D);
+            this.PanelCorredores.Controls.Add(this.pbx_Circuito_Carga);
+            this.PanelCorredores.Controls.Add(this.lblPGP_D);
             this.PanelCorredores.Controls.Add(this.lblPrimerGP);
             this.PanelCorredores.Controls.Add(this.lblLongitud_D);
             this.PanelCorredores.Controls.Add(this.lblLongitud);
             this.PanelCorredores.Controls.Add(this.lblPais_D);
             this.PanelCorredores.Controls.Add(this.lblPais);
+            this.PanelCorredores.Controls.Add(this.lblNombre);
+            this.PanelCorredores.Controls.Add(this.btn_Cerrar);
             this.PanelCorredores.Location = new System.Drawing.Point(353, 25);
             this.PanelCorredores.Name = "PanelCorredores";
             this.PanelCorredores.Size = new System.Drawing.Size(653, 505);
             this.PanelCorredores.TabIndex = 2;
             this.PanelCorredores.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // lblNombre
+            // 
+            this.lblNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(223, 24);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(0, 13);
+            this.lblNombre.TabIndex = 22;
+            // 
             // btnFiltros
             // 
-            this.btnFiltros.Location = new System.Drawing.Point(305, 55);
+            this.btnFiltros.Location = new System.Drawing.Point(11, 55);
             this.btnFiltros.Name = "btnFiltros";
             this.btnFiltros.Size = new System.Drawing.Size(86, 23);
             this.btnFiltros.TabIndex = 21;
@@ -150,34 +155,34 @@
             this.btnFiltros.UseVisualStyleBackColor = true;
             this.btnFiltros.Click += new System.EventHandler(this.BtnFiltros_Click);
             // 
-            // pbx_Corredor_Carga
+            // pbx_Circuito_Carga
             // 
-            this.pbx_Corredor_Carga.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pbx_Circuito_Carga.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbx_Corredor_Carga.Location = new System.Drawing.Point(407, 3);
-            this.pbx_Corredor_Carga.Name = "pbx_Corredor_Carga";
-            this.pbx_Corredor_Carga.Size = new System.Drawing.Size(235, 486);
-            this.pbx_Corredor_Carga.TabIndex = 18;
-            this.pbx_Corredor_Carga.TabStop = false;
+            this.pbx_Circuito_Carga.Location = new System.Drawing.Point(6, 270);
+            this.pbx_Circuito_Carga.Name = "pbx_Circuito_Carga";
+            this.pbx_Circuito_Carga.Size = new System.Drawing.Size(636, 219);
+            this.pbx_Circuito_Carga.TabIndex = 18;
+            this.pbx_Circuito_Carga.TabStop = false;
             // 
-            // lblPuntos_D
+            // lblPGP_D
             // 
-            this.lblPuntos_D.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblPGP_D.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblPuntos_D.AutoSize = true;
-            this.lblPuntos_D.Location = new System.Drawing.Point(241, 237);
-            this.lblPuntos_D.Name = "lblPuntos_D";
-            this.lblPuntos_D.Size = new System.Drawing.Size(35, 13);
-            this.lblPuntos_D.TabIndex = 7;
-            this.lblPuntos_D.Text = "label8";
+            this.lblPGP_D.AutoSize = true;
+            this.lblPGP_D.Location = new System.Drawing.Point(373, 210);
+            this.lblPGP_D.Name = "lblPGP_D";
+            this.lblPGP_D.Size = new System.Drawing.Size(35, 13);
+            this.lblPGP_D.TabIndex = 7;
+            this.lblPGP_D.Text = "label8";
             // 
             // lblPrimerGP
             // 
             this.lblPrimerGP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lblPrimerGP.AutoSize = true;
-            this.lblPrimerGP.Location = new System.Drawing.Point(3, 237);
+            this.lblPrimerGP.Location = new System.Drawing.Point(135, 210);
             this.lblPrimerGP.Name = "lblPrimerGP";
             this.lblPrimerGP.Size = new System.Drawing.Size(88, 13);
             this.lblPrimerGP.TabIndex = 6;
@@ -188,7 +193,7 @@
             this.lblLongitud_D.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lblLongitud_D.AutoSize = true;
-            this.lblLongitud_D.Location = new System.Drawing.Point(241, 212);
+            this.lblLongitud_D.Location = new System.Drawing.Point(373, 185);
             this.lblLongitud_D.Name = "lblLongitud_D";
             this.lblLongitud_D.Size = new System.Drawing.Size(35, 13);
             this.lblLongitud_D.TabIndex = 5;
@@ -199,7 +204,7 @@
             this.lblLongitud.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lblLongitud.AutoSize = true;
-            this.lblLongitud.Location = new System.Drawing.Point(3, 212);
+            this.lblLongitud.Location = new System.Drawing.Point(135, 185);
             this.lblLongitud.Name = "lblLongitud";
             this.lblLongitud.Size = new System.Drawing.Size(48, 13);
             this.lblLongitud.TabIndex = 4;
@@ -210,7 +215,7 @@
             this.lblPais_D.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lblPais_D.AutoSize = true;
-            this.lblPais_D.Location = new System.Drawing.Point(241, 190);
+            this.lblPais_D.Location = new System.Drawing.Point(373, 163);
             this.lblPais_D.Name = "lblPais_D";
             this.lblPais_D.Size = new System.Drawing.Size(35, 13);
             this.lblPais_D.TabIndex = 3;
@@ -221,7 +226,7 @@
             this.lblPais.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lblPais.AutoSize = true;
-            this.lblPais.Location = new System.Drawing.Point(3, 190);
+            this.lblPais.Location = new System.Drawing.Point(135, 163);
             this.lblPais.Name = "lblPais";
             this.lblPais.Size = new System.Drawing.Size(27, 13);
             this.lblPais.TabIndex = 2;
@@ -236,6 +241,7 @@
             this.PanelFiltros.Controls.Add(this.btnAgregarCircuito);
             this.PanelFiltros.Controls.Add(this.PBXCircuito);
             this.PanelFiltros.Controls.Add(this.MtxtFecha);
+            this.PanelFiltros.Controls.Add(this.panel1);
             this.PanelFiltros.Controls.Add(this.TxtLugar);
             this.PanelFiltros.Controls.Add(this.TxtPais);
             this.PanelFiltros.Controls.Add(this.TxtApellido);
@@ -246,16 +252,10 @@
             this.PanelFiltros.Controls.Add(this.label7);
             this.PanelFiltros.Controls.Add(this.label5);
             this.PanelFiltros.Controls.Add(this.label1);
-            this.PanelFiltros.Controls.Add(this.panel1);
-            this.PanelFiltros.Controls.Add(this.chxPais);
-            this.PanelFiltros.Controls.Add(this.chxOrdenadosPuntos);
             this.PanelFiltros.Controls.Add(this.CbxFiltroTemporada);
             this.PanelFiltros.Controls.Add(this.cbxOrdenadosFechaNacimiento);
             this.PanelFiltros.Controls.Add(this.ChxMayorCantidaddePodios);
-            this.PanelFiltros.Controls.Add(this.chxCampeones);
-            this.PanelFiltros.Controls.Add(this.ddlFiltroPaises);
             this.PanelFiltros.Controls.Add(this.label22);
-            this.PanelFiltros.Controls.Add(this.label30);
             this.PanelFiltros.Location = new System.Drawing.Point(353, 25);
             this.PanelFiltros.Name = "PanelFiltros";
             this.PanelFiltros.Size = new System.Drawing.Size(653, 505);
@@ -263,7 +263,10 @@
             // 
             // btnAgregarCircuito
             // 
-            this.btnAgregarCircuito.Location = new System.Drawing.Point(549, 19);
+            this.btnAgregarCircuito.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarCircuito.Location = new System.Drawing.Point(148, 241);
             this.btnAgregarCircuito.Name = "btnAgregarCircuito";
             this.btnAgregarCircuito.Size = new System.Drawing.Size(75, 23);
             this.btnAgregarCircuito.TabIndex = 42;
@@ -276,9 +279,9 @@
             this.PBXCircuito.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.PBXCircuito.Location = new System.Drawing.Point(417, 231);
+            this.PBXCircuito.Location = new System.Drawing.Point(248, 226);
             this.PBXCircuito.Name = "PBXCircuito";
-            this.PBXCircuito.Size = new System.Drawing.Size(226, 258);
+            this.PBXCircuito.Size = new System.Drawing.Size(394, 258);
             this.PBXCircuito.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PBXCircuito.TabIndex = 41;
             this.PBXCircuito.TabStop = false;
@@ -291,7 +294,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MtxtFecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.MtxtFecha.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.MtxtFecha.Location = new System.Drawing.Point(417, 212);
+            this.MtxtFecha.Location = new System.Drawing.Point(16, 434);
             this.MtxtFecha.Mask = "00/00/0000";
             this.MtxtFecha.Name = "MtxtFecha";
             this.MtxtFecha.Size = new System.Drawing.Size(226, 13);
@@ -305,7 +308,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtLugar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.TxtLugar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtLugar.Location = new System.Drawing.Point(417, 179);
+            this.TxtLugar.Location = new System.Drawing.Point(16, 401);
             this.TxtLugar.Name = "TxtLugar";
             this.TxtLugar.Size = new System.Drawing.Size(226, 13);
             this.TxtLugar.TabIndex = 39;
@@ -317,7 +320,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtPais.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.TxtPais.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtPais.Location = new System.Drawing.Point(417, 140);
+            this.TxtPais.Location = new System.Drawing.Point(16, 362);
             this.TxtPais.Name = "TxtPais";
             this.TxtPais.Size = new System.Drawing.Size(226, 13);
             this.TxtPais.TabIndex = 38;
@@ -329,7 +332,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtApellido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.TxtApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtApellido.Location = new System.Drawing.Point(417, 101);
+            this.TxtApellido.Location = new System.Drawing.Point(16, 323);
             this.TxtApellido.Name = "TxtApellido";
             this.TxtApellido.Size = new System.Drawing.Size(226, 13);
             this.TxtApellido.TabIndex = 37;
@@ -341,7 +344,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.TxtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtNombre.Location = new System.Drawing.Point(417, 62);
+            this.TxtNombre.Location = new System.Drawing.Point(16, 284);
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(226, 13);
             this.TxtNombre.TabIndex = 36;
@@ -352,7 +355,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(413, 195);
+            this.label13.Location = new System.Drawing.Point(12, 417);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(106, 13);
             this.label13.TabIndex = 35;
@@ -364,7 +367,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(414, 163);
+            this.label11.Location = new System.Drawing.Point(13, 385);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(103, 13);
             this.label11.TabIndex = 34;
@@ -376,7 +379,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(414, 124);
+            this.label9.Location = new System.Drawing.Point(13, 346);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(96, 13);
             this.label9.TabIndex = 33;
@@ -388,7 +391,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(414, 85);
+            this.label7.Location = new System.Drawing.Point(13, 307);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 13);
             this.label7.TabIndex = 32;
@@ -400,7 +403,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(414, 46);
+            this.label5.Location = new System.Drawing.Point(13, 268);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 13);
             this.label5.TabIndex = 31;
@@ -408,11 +411,10 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(414, 19);
+            this.label1.Location = new System.Drawing.Point(13, 241);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 30;
@@ -420,39 +422,17 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.panel1.Location = new System.Drawing.Point(397, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 201);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 641);
+            this.panel1.Size = new System.Drawing.Size(661, 10);
             this.panel1.TabIndex = 29;
-            // 
-            // chxPais
-            // 
-            this.chxPais.AutoSize = true;
-            this.chxPais.Location = new System.Drawing.Point(30, 61);
-            this.chxPais.Name = "chxPais";
-            this.chxPais.Size = new System.Drawing.Size(64, 17);
-            this.chxPais.TabIndex = 28;
-            this.chxPais.Text = "Por pais";
-            this.chxPais.UseVisualStyleBackColor = true;
-            this.chxPais.CheckedChanged += new System.EventHandler(this.chxPais_CheckedChanged);
-            // 
-            // chxOrdenadosPuntos
-            // 
-            this.chxOrdenadosPuntos.AutoSize = true;
-            this.chxOrdenadosPuntos.Location = new System.Drawing.Point(28, 247);
-            this.chxOrdenadosPuntos.Name = "chxOrdenadosPuntos";
-            this.chxOrdenadosPuntos.Size = new System.Drawing.Size(186, 17);
-            this.chxOrdenadosPuntos.TabIndex = 27;
-            this.chxOrdenadosPuntos.Text = "Mayor cantidad de puntos primero";
-            this.chxOrdenadosPuntos.UseVisualStyleBackColor = true;
             // 
             // CbxFiltroTemporada
             // 
             this.CbxFiltroTemporada.FormattingEnabled = true;
-            this.CbxFiltroTemporada.Location = new System.Drawing.Point(161, 98);
+            this.CbxFiltroTemporada.Location = new System.Drawing.Point(190, 38);
             this.CbxFiltroTemporada.Name = "CbxFiltroTemporada";
             this.CbxFiltroTemporada.Size = new System.Drawing.Size(121, 21);
             this.CbxFiltroTemporada.TabIndex = 26;
@@ -460,76 +440,34 @@
             // cbxOrdenadosFechaNacimiento
             // 
             this.cbxOrdenadosFechaNacimiento.AutoSize = true;
-            this.cbxOrdenadosFechaNacimiento.Location = new System.Drawing.Point(28, 211);
+            this.cbxOrdenadosFechaNacimiento.Location = new System.Drawing.Point(57, 115);
             this.cbxOrdenadosFechaNacimiento.Name = "cbxOrdenadosFechaNacimiento";
-            this.cbxOrdenadosFechaNacimiento.Size = new System.Drawing.Size(195, 17);
+            this.cbxOrdenadosFechaNacimiento.Size = new System.Drawing.Size(146, 17);
             this.cbxOrdenadosFechaNacimiento.TabIndex = 24;
-            this.cbxOrdenadosFechaNacimiento.Text = "Ordenados por fecha de nacimiento";
+            this.cbxOrdenadosFechaNacimiento.Text = "Ordenados por Primer GP";
             this.cbxOrdenadosFechaNacimiento.UseVisualStyleBackColor = true;
             this.cbxOrdenadosFechaNacimiento.CheckedChanged += new System.EventHandler(this.cbxOrdenadosFechaNacimiento_CheckedChanged);
             // 
             // ChxMayorCantidaddePodios
             // 
             this.ChxMayorCantidaddePodios.AutoSize = true;
-            this.ChxMayorCantidaddePodios.Location = new System.Drawing.Point(28, 175);
+            this.ChxMayorCantidaddePodios.Location = new System.Drawing.Point(57, 79);
             this.ChxMayorCantidaddePodios.Name = "ChxMayorCantidaddePodios";
-            this.ChxMayorCantidaddePodios.Size = new System.Drawing.Size(220, 17);
+            this.ChxMayorCantidaddePodios.Size = new System.Drawing.Size(140, 17);
             this.ChxMayorCantidaddePodios.TabIndex = 23;
-            this.ChxMayorCantidaddePodios.Text = "Ordenados por mayor cantidad de podios";
+            this.ChxMayorCantidaddePodios.Text = "Ordenados por Longitud";
             this.ChxMayorCantidaddePodios.UseVisualStyleBackColor = true;
-            // 
-            // chxCampeones
-            // 
-            this.chxCampeones.AutoSize = true;
-            this.chxCampeones.Location = new System.Drawing.Point(28, 136);
-            this.chxCampeones.Name = "chxCampeones";
-            this.chxCampeones.Size = new System.Drawing.Size(106, 17);
-            this.chxCampeones.TabIndex = 22;
-            this.chxCampeones.Text = "Solo Campeones";
-            this.chxCampeones.UseVisualStyleBackColor = true;
-            // 
-            // ddlFiltroPaises
-            // 
-            this.ddlFiltroPaises.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ddlFiltroPaises.FormattingEnabled = true;
-            this.ddlFiltroPaises.Location = new System.Drawing.Point(161, 62);
-            this.ddlFiltroPaises.Name = "ddlFiltroPaises";
-            this.ddlFiltroPaises.Size = new System.Drawing.Size(121, 21);
-            this.ddlFiltroPaises.Sorted = true;
-            this.ddlFiltroPaises.TabIndex = 21;
-            this.ddlFiltroPaises.SelectedIndexChanged += new System.EventHandler(this.ddlFiltroPaises_SelectedIndexChanged);
             // 
             // label22
             // 
             this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(25, 101);
+            this.label22.Location = new System.Drawing.Point(54, 41);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(61, 13);
             this.label22.TabIndex = 8;
             this.label22.Text = "Temporada";
-            // 
-            // label30
-            // 
-            this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(25, 19);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(69, 13);
-            this.label30.TabIndex = 0;
-            this.label30.Text = "Buscar Piloto";
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(25, 19);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(0, 13);
-            this.lblNombre.TabIndex = 22;
             // 
             // Circuitos
             // 
@@ -538,15 +476,15 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.ClientSize = new System.Drawing.Size(1018, 559);
             this.Controls.Add(this.DGVCircuitos);
-            this.Controls.Add(this.PanelCorredores);
             this.Controls.Add(this.PanelFiltros);
+            this.Controls.Add(this.PanelCorredores);
             this.Name = "Circuitos";
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.Circuitos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVCircuitos)).EndInit();
             this.PanelCorredores.ResumeLayout(false);
             this.PanelCorredores.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbx_Corredor_Carga)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_Circuito_Carga)).EndInit();
             this.PanelFiltros.ResumeLayout(false);
             this.PanelFiltros.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBXCircuito)).EndInit();
@@ -559,8 +497,8 @@
         private System.Windows.Forms.Button btn_Cerrar;
         private System.Windows.Forms.DataGridView DGVCircuitos;
         private System.Windows.Forms.Panel PanelCorredores;
-        private System.Windows.Forms.PictureBox pbx_Corredor_Carga;
-        private System.Windows.Forms.Label lblPuntos_D;
+        private System.Windows.Forms.PictureBox pbx_Circuito_Carga;
+        private System.Windows.Forms.Label lblPGP_D;
         private System.Windows.Forms.Label lblPrimerGP;
         private System.Windows.Forms.Label lblLongitud_D;
         private System.Windows.Forms.Label lblLongitud;
@@ -568,15 +506,10 @@
         private System.Windows.Forms.Label lblPais;
         private System.Windows.Forms.Button btnFiltros;
         private System.Windows.Forms.Panel PanelFiltros;
-        private System.Windows.Forms.CheckBox chxOrdenadosPuntos;
         private System.Windows.Forms.ComboBox CbxFiltroTemporada;
         private System.Windows.Forms.CheckBox cbxOrdenadosFechaNacimiento;
         private System.Windows.Forms.CheckBox ChxMayorCantidaddePodios;
-        private System.Windows.Forms.CheckBox chxCampeones;
-        private System.Windows.Forms.ComboBox ddlFiltroPaises;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.CheckBox chxPais;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label9;

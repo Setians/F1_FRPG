@@ -39,11 +39,11 @@ namespace Formula1.Gestion
         public string ObtenerNombre(string id)
         {
 
-            Corredor corredor = new Corredor();
+            Circuito circuito = new Circuito();
             AccesoDatos conexion = new AccesoDatos();
 
 
-            string consulta = "Select Nombre_Corredor from  F1_Corredores where ID_Corredor = '" + id + "'";
+            string consulta = "Select Nombre_Circuito from F1_Circuitos where F1_Circuitos.ID_Circuito = '" + id + "'";
             try
             {
                 conexion.setearConsulta(consulta);
@@ -51,10 +51,10 @@ namespace Formula1.Gestion
 
                 while (conexion.Lector.Read())
                 {
-                    corredor.Nombre = conexion.Lector.GetString(0);
+                    circuito.NombreCircuito = conexion.Lector.GetString(0);
 
                 }
-                return corredor.Nombre;
+                return circuito.NombreCircuito;
 
             }
             catch (Exception ex)
@@ -67,14 +67,15 @@ namespace Formula1.Gestion
             }
 
         }
-        public string ObtenerApellido(string id)
+
+        public string ObtenerLongitud(string id)
         {
 
-            Corredor corredor = new Corredor();
+            Circuito Circuito = new Circuito();
             AccesoDatos conexion = new AccesoDatos();
 
 
-            string consulta = "Select Apellido_Corredor from F1_Corredores where ID_Corredor = '" + id + "'";
+            string consulta = "Select Longitud from F1_Circuitos where F1_Circuitos.ID_Circuito ='" + id + "'";
             try
             {
                 conexion.setearConsulta(consulta);
@@ -82,10 +83,10 @@ namespace Formula1.Gestion
 
                 while (conexion.Lector.Read())
                 {
-                    corredor.Apellido = conexion.Lector.GetString(0);
+                    Circuito.Longitud = conexion.Lector.GetString(0);
 
                 }
-                return corredor.Apellido;
+                return Circuito.Longitud;
 
             }
             catch (Exception ex)
@@ -98,14 +99,15 @@ namespace Formula1.Gestion
             }
 
         }
-        public string ObtenerLugarNacimiento(string id)
+
+        public string ObtenerPais(string id)
         {
 
-            Corredor corredor = new Corredor();
+            Circuito Circuito = new Circuito();
             AccesoDatos conexion = new AccesoDatos();
 
 
-            string consulta = "Select LugarN_Corredor from  F1_Corredores where ID_Corredor = '" + id + "'";
+            string consulta = "Select Pais_Circuito from F1_Circuitos where F1_Circuitos.ID_Circuito = '" + id + "'";
             try
             {
                 conexion.setearConsulta(consulta);
@@ -113,10 +115,80 @@ namespace Formula1.Gestion
 
                 while (conexion.Lector.Read())
                 {
-                    corredor.LugarNacimiento = conexion.Lector.GetString(0);
+                    Circuito.PaisCircuito = conexion.Lector.GetString(0);
 
                 }
-                return corredor.LugarNacimiento;
+                return Circuito.PaisCircuito;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.cerrarConexion();
+            }
+
+        }
+
+        public string ObtenerPrimerGP(string id)
+        {
+
+            Circuito Circuito = new Circuito();
+            AccesoDatos conexion = new AccesoDatos();
+
+
+            string consulta = "select PrimerGP_Circuito from F1_Circuitos where F1_Circuitos.ID_Circuito = '" + id + "'";
+            try
+            {
+                conexion.setearConsulta(consulta);
+                conexion.leerConsulta();
+
+                while (conexion.Lector.Read())
+                {
+                    Circuito.PrimerGPCircuito = conexion.Lector.GetString(0);
+
+                }
+                return Circuito.PrimerGPCircuito;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.cerrarConexion();
+            }
+
+        }
+
+        public string ObtenerImagen(string id)
+        {
+
+            Circuito Circuito = new Circuito();
+            AccesoDatos conexion = new AccesoDatos();
+
+
+            string consulta = "select Imagen_Circuito from F1_Circuitos where F1_Circuitos.ID_Circuito = '" + id + "'";
+            try
+            {
+                conexion.setearConsulta(consulta);
+                conexion.leerConsulta();
+
+                while (conexion.Lector.Read())
+                {
+                    if (!conexion.Lector.IsDBNull(0))
+                    {
+                        Circuito.ImagenCircuito = conexion.Lector.GetString(0);
+                    }
+                    //else
+                    //{
+                    //    Circuito.ImagenCircuito = null;
+                    //}
+                }
+                return Circuito.ImagenCircuito;
 
             }
             catch (Exception ex)

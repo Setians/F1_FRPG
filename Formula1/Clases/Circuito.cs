@@ -9,7 +9,7 @@ namespace Formula1.Clases
     public class Circuito
     {
         public int IDCircuito { get; set; }
-        public DateTime PrimerGPCircuito { get; set; }
+        public string PrimerGPCircuito { get; set; }
         public string NombreCircuito { get; set; }
         public string PaisCircuito { get; set; }
         public string Longitud { get; set; }
@@ -20,7 +20,7 @@ namespace Formula1.Clases
            
         }
 
-        public Circuito(DateTime PrimergpCircuito, string Nombre, string Pais, string Longitud, string Imagen)
+        public Circuito(string PrimergpCircuito, string Nombre, string Pais, string Longitud, string Imagen)
         {
             this.PrimerGPCircuito = PrimergpCircuito;
             this.NombreCircuito = Nombre;

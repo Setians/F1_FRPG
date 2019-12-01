@@ -30,13 +30,13 @@ constraint pk_Equipo primary key (iD_Equipo)
 )
 
 create table F1_Circuitos
-
 (
 ID_Circuito int identity (1,1) not null,
-PrimerGP_Circuito datetime null,
+PrimerGP_Circuito varchar(5) null,
 Nombre_Circuito varchar (50) not null,
 Pais_Circuito varchar(50) null,
 Longitud varchar(20) null,
+Imagen_Circuito varchar(150) null,
 constraint pk_Circuito primary key (id_Circuito)
 )
 
@@ -606,7 +606,7 @@ Select DISTINCT Pais_Corredor from F1_Corredores
 Select ID_Corredor as ID, (Nombre_Corredor+ ' '+ Apellido_Corredor )as Nombre from F1_Corredores where Pais_Corredor = 'Reino Unido' order by CONVERT( VARCHAR , FechaN_Corredor , 112 ) desc
 
 ---Cargado de Circuitos
-INSERT INTO [Formula_1].[dbo].[F1_Circuitos] ([PrimerGP_Circuito], [Nombre_Circuito], [Pais_Circuito], [Longitud]) VALUES   (1996, 'Melbourne Grand Prix Circuit', 'Melbourne, Australia', '5.303 km')
+INSERT INTO [Formula_1].[dbo].[F1_Circuitos] ([PrimerGP_Circuito], [Nombre_Circuito], [Pais_Circuito], [Longitud], [Imagen_Circuito]) VALUES   (1996, 'Melbourne Grand Prix Circuit', 'Melbourne, Australia', '5.303 km', '\imagenes\Circuitos\Melbourne Grand Prix Circuit.png')
 INSERT INTO [Formula_1].[dbo].[F1_Circuitos] ([PrimerGP_Circuito], [Nombre_Circuito], [Pais_Circuito], [Longitud]) VALUES   (1950, 'Circuit de Monaco', 'MonteCarlo, Monaco', '3.337km ')
 INSERT INTO [Formula_1].[dbo].[F1_Circuitos] ([PrimerGP_Circuito], [Nombre_Circuito], [Pais_Circuito], [Longitud]) VALUES   (2009, 'Yas Marina Circuit', 'Abu Dhabi, Emiratos Árabes Unidos', '5.554km')
 INSERT INTO [Formula_1].[dbo].[F1_Circuitos] ([PrimerGP_Circuito], [Nombre_Circuito], [Pais_Circuito], [Longitud]) VALUES   (1973, 'Autódromo José Carlos Pace', 'São Paulo, Brazil', '4.309km')
