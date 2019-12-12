@@ -14,15 +14,15 @@ namespace Formula1.Gestion
         {
             AccesoDatos conexion = new AccesoDatos();
 
-            string consulta = "spInsertarCorredor";
+            string consulta = "spInsertarCircuito";
             try
             {
                 conexion.borrarParametros();
-                conexion.agregarParametro("@NOMBRECorredor", circuito.PrimerGPCircuito);
-                conexion.agregarParametro("@ApellidoCorredor", circuito.NombreCircuito);
-                conexion.agregarParametro("@LugarNacimientoCorredor", circuito.Longitud);
-                conexion.agregarParametro("@FechaNacCorr", circuito.PaisCircuito);
-                conexion.agregarParametro("@PaisCorredor", circuito.ImagenCircuito);
+                conexion.agregarParametro("@NombreCircuito", circuito.NombreCircuito);
+                conexion.agregarParametro("@PrimerGPCircuito", circuito.PrimerGPCircuito);
+                conexion.agregarParametro("@PaisCircuito", circuito.PaisCircuito);
+                conexion.agregarParametro("@LongitudCircuito", circuito.Longitud);
+                conexion.agregarParametro("@Imagen", circuito.ImagenCircuito);
                 conexion.setearSP(consulta);
                 conexion.leerConsulta();
             }

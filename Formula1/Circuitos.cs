@@ -40,20 +40,20 @@ namespace Formula1
         {
             AccesoDatos a = new AccesoDatos();
             string consulta = "" +
-           "Select ID_Corredor as ID, (Nombre_Corredor+ ' '+ Apellido_Corredor )as Nombre" +
-           " from F1_Corredores ";
-            string where = " ";
-            //if (chxPais.Checked == true)
-            //{
-            //    where = "where Pais_Corredor = " + "'" + ddlFiltroPaises.SelectedItem.ToString() + "' ";
-            //}
-
+           "Select ID_Circuito as ID, (Nombre_Circuito) as Nombre " +
+           " from F1_Circuitos ";
+            //string where = " ";
             string order = " order by id asc";
-            if (cbxOrdenadosFechaNacimiento.Checked == true)
+            if (ChxMayorLongitud.Checked == true)
             {
-                order = " order by CONVERT( VARCHAR , FechaN_Corredor , 112 ) desc";
+                order = " order by Longitud asc";
             }
-            consulta = consulta + where + order;
+            if (cbxOrdenadosPrimerGP.Checked == true)
+            {
+                order = " order by PrimerGP_Circuito asc";
+            }
+            consulta = consulta + order;
+            //consulta = consulta + where + order;
             DGVCircuitos.DataSource = a.LlenarDataGridViewConsulta(consulta);
             DGVCircuitos.ClearSelection();
             a.cerrarConexion();
@@ -69,7 +69,7 @@ namespace Formula1
                 c.Font = new Font(pfc.Families[0], Convert.ToSingle(8.10), FontStyle.Regular);
             }
 
-            label1.Font = new Font(pfc.Families[0], Convert.ToSingle(10), FontStyle.Regular);
+            lbl_A_Circuito.Font = new Font(pfc.Families[0], Convert.ToSingle(10), FontStyle.Regular);
             //label30.Font = new Font(pfc.Families[0], Convert.ToSingle(10), FontStyle.Regular);
             fontPath = Path.Combine(Application.StartupPath, @"..\..\..\" + "F1 Font Files (with important Message)\\Formula1-Regular.otf");
             pfc.AddFontFile(fontPath);
@@ -136,31 +136,19 @@ namespace Formula1
 
         }
 
-        private void chxPais_CheckedChanged(object sender, EventArgs e)
-        {
-
-            //AccesoDatos a = new AccesoDatos();
-            //string consulta = "Select DISTINCT Pais_Corredor from F1_Corredores";
-            //if (chxPais.Checked == true)
-            //{
-            //    a.llenarCbx(consulta, ddlFiltroPaises, "Pais_Corredor");
-
-            //}
-            //else
-            //{
-            //    ddlFiltroPaises.Items.Clear();
-            //    Filtros();
-            //}
-            //a.cerrarConexion();
-        }
-
-        private void ddlFiltroPaises_SelectedIndexChanged(object sender, EventArgs e)
+        private void ddlFiltroTemporadas_SelectedIndexChanged(object sender, EventArgs e)
         {
             Filtros();
 
         }
 
-        private void cbxOrdenadosFechaNacimiento_CheckedChanged(object sender, EventArgs e)
+
+        private void ChxMayorLongitud_CheckedChanged(object sender, EventArgs e)
+        {
+            Filtros();
+        }
+
+        private void cbxOrdenadosPrimerGP_CheckedChanged(object sender, EventArgs e)
         {
             Filtros();
         }
@@ -168,18 +156,18 @@ namespace Formula1
         private void btnAgregarCircuito_Click(object sender, EventArgs e)
         {
             GestionCircuito g = new GestionCircuito();
-            string imagepath = Path.Combine(Application.StartupPath, @"..\..\..\" + "imagenes\\Corredores\\");
+            string imagepath = "imagenes\\Circuitos\\";
             string Destino = "";
             if (File.Exists(PBXCircuito.ImageLocation.ToString()))
             {
                 string ruta = PBXCircuito.ImageLocation.ToString();
                 string[] extencion = ruta.Split('.');
-                Destino = imagepath + TxtNombre.Text + TxtApellido.Text + '.' + extencion[1];
-                File.Copy(PBXCircuito.ImageLocation.ToString(), Destino, true);
-
+                Destino = imagepath + TxtNombre.Text + '.' + extencion[1];
             }
-            Circuito corredor = new Circuito(MtxtFecha.Text,TxtNombre.Text, TxtPais.Text, TxtLugar.Text, Destino);
-            g.CargarCircuito(corredor);
+            Circuito circuito = new Circuito(TxtPrimerGP.Text,TxtNombre.Text, TxtLongitud.Text, TxtPrimerGP.Text, Destino);
+            g.CargarCircuito(circuito);
+            Destino = Path.Combine(Application.StartupPath, @"..\..\..\" + Destino);
+            File.Copy(PBXCircuito.ImageLocation.ToString(), Destino, true);
             MessageBox.Show("El registro se cargo correctamente", "", MessageBoxButtons.OK);
             llenarDgv();
         }
@@ -199,11 +187,6 @@ namespace Formula1
             {
                 MessageBox.Show("No se selecciono imagen", "Sin Seleccion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-        }
-
-        private void DGVCircuitos_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-
         }
 
     }

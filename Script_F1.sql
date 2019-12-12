@@ -236,13 +236,14 @@ RETURN
 go
 
 ---------Procedimientos de Circuitos--------------
-CREATE PROCEDURE spInsertarCircuito
+Create PROCEDURE spInsertarCircuito
 (
 
 @NombreCircuito varCHAR(50),
 @PrimerGPCircuito int,
 @PaisCircuito varchar (30),
-@LongitudCircuito char(20)
+@LongitudCircuito char(20),
+@Imagen varchar(150)
 )
 AS
 INSERT INTO F1_Circuitos
@@ -251,7 +252,8 @@ INSERT INTO F1_Circuitos
 Nombre_Circuito,
 PrimerGP_Circuito,
 Pais_Circuito,
-Longitud
+Longitud,
+Imagen_Circuito
 )
 VALUES
 (
@@ -259,7 +261,8 @@ VALUES
 @NombreCircuito ,
 @PrimerGPCircuito ,
 @PaisCircuito ,
-@LongitudCircuito 
+@LongitudCircuito,
+@Imagen 
 )
 RETURN
 go
@@ -578,14 +581,12 @@ go
 
 ---Carga de datos 
 
-exec spInsertarCorredor 'Lewis', 'Hamilton','Stevenage, Inglaterra', '07/01/1985', 'Reino Unido','D:\mtias\lab\Formula1\imagenes\Corredores\Hamilton.jpg'
-exec spInsertarCorredor 'Sebastian', 'Vettel','Heppenheim, Alemania', '03/07/1987', 'Alemania',  'D:\mtias\lab\Formula1\imagenes\Corredores\Vettel.jpg'
-exec spInsertarCorredor 'Kimi', 'Räikkönen','Espoo, Finlandia', '17/10/1979', 'Finlandia', 'D:\mtias\lab\Formula1\imagenes\Corredores\Raikonen.jpg'   
-exec spInsertarCorredor 'Juan Manuel', 'Fangio','Balcarce, Argentina', '24/6/1911', 'Argentina', 'D:\mtias\lab\Formula1\imagenes\Corredores\Fangio.png'
-exec spInsertarCorredor 'Lando', 'Norris','Bristol, Inglaterra', '13/11/1999', 'Reino Unido', 'D:\mtias\lab\Formula1\imagenes\Corredores\Lando Norris.jpg'   
-exec spInsertarCorredor 'Max', 'Verstappen','Hasselt, Bélgica', '30/09/1997', 'Paises Bajos', 'D:\mtias\lab\Formula1\imagenes\Corredores\Max Verstappen.jpg'
-
-
+exec spInsertarCorredor 'Lewis', 'Hamilton','Stevenage, Inglaterra', '07/01/1985', 'Reino Unido','\imagenes\Corredores\Hamilton.jpg'
+exec spInsertarCorredor 'Sebastian', 'Vettel','Heppenheim, Alemania', '03/07/1987', 'Alemania',  '\imagenes\Corredores\Vettel.jpg'
+exec spInsertarCorredor 'Kimi', 'Räikkönen','Espoo, Finlandia', '17/10/1979', 'Finlandia', '\imagenes\Corredores\Raikonen.jpg'   
+exec spInsertarCorredor 'Juan Manuel', 'Fangio','Balcarce, Argentina', '24/6/1911', 'Argentina', '\imagenes\Corredores\Fangio.png'
+exec spInsertarCorredor 'Lando', 'Norris','Bristol, Inglaterra', '13/11/1999', 'Reino Unido', '\imagenes\Corredores\Lando Norris.jpg'   
+exec spInsertarCorredor 'Max', 'Verstappen','Hasselt, Bélgica', '30/09/1997', 'Paises Bajos', '\imagenes\Corredores\Max Verstappen.jpg'
 
 
 

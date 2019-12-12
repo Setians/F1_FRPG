@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Circuitos));
             this.btn_Cerrar = new System.Windows.Forms.Button();
             this.DGVCircuitos = new System.Windows.Forms.DataGridView();
             this.PanelCorredores = new System.Windows.Forms.Panel();
-            this.lblNombre = new System.Windows.Forms.Label();
             this.btnFiltros = new System.Windows.Forms.Button();
             this.pbx_Circuito_Carga = new System.Windows.Forms.PictureBox();
             this.lblPGP_D = new System.Windows.Forms.Label();
@@ -42,24 +42,23 @@
             this.lblLongitud = new System.Windows.Forms.Label();
             this.lblPais_D = new System.Windows.Forms.Label();
             this.lblPais = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.PanelFiltros = new System.Windows.Forms.Panel();
             this.btnAgregarCircuito = new System.Windows.Forms.Button();
             this.PBXCircuito = new System.Windows.Forms.PictureBox();
-            this.MtxtFecha = new System.Windows.Forms.MaskedTextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.TxtPrimerGP = new System.Windows.Forms.TextBox();
+            this.TxtLongitud = new System.Windows.Forms.TextBox();
             this.TxtLugar = new System.Windows.Forms.TextBox();
-            this.TxtPais = new System.Windows.Forms.TextBox();
-            this.TxtApellido = new System.Windows.Forms.TextBox();
             this.TxtNombre = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_A_Circuito = new System.Windows.Forms.Label();
             this.CbxFiltroTemporada = new System.Windows.Forms.ComboBox();
-            this.cbxOrdenadosFechaNacimiento = new System.Windows.Forms.CheckBox();
-            this.ChxMayorCantidaddePodios = new System.Windows.Forms.CheckBox();
+            this.cbxOrdenadosPrimerGP = new System.Windows.Forms.CheckBox();
+            this.ChxMayorLongitud = new System.Windows.Forms.CheckBox();
             this.label22 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGVCircuitos)).BeginInit();
             this.PanelCorredores.SuspendLayout();
@@ -82,25 +81,25 @@
             // 
             this.DGVCircuitos.AllowUserToAddRows = false;
             this.DGVCircuitos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Red;
-            this.DGVCircuitos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Red;
+            this.DGVCircuitos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVCircuitos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.DGVCircuitos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVCircuitos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGVCircuitos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVCircuitos.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVCircuitos.DefaultCellStyle = dataGridViewCellStyle2;
             this.DGVCircuitos.EnableHeadersVisualStyles = false;
             this.DGVCircuitos.Location = new System.Drawing.Point(12, 25);
             this.DGVCircuitos.Name = "DGVCircuitos";
@@ -110,7 +109,6 @@
             this.DGVCircuitos.ShowEditingIcon = false;
             this.DGVCircuitos.Size = new System.Drawing.Size(335, 505);
             this.DGVCircuitos.TabIndex = 1;
-            this.DGVCircuitos.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGVCircuitos_CellMouseClick);
             this.DGVCircuitos.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.DGVCircuitos_RowStateChanged);
             // 
             // PanelCorredores
@@ -134,16 +132,6 @@
             this.PanelCorredores.Size = new System.Drawing.Size(653, 505);
             this.PanelCorredores.TabIndex = 2;
             this.PanelCorredores.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(223, 24);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(0, 13);
-            this.lblNombre.TabIndex = 22;
             // 
             // btnFiltros
             // 
@@ -232,6 +220,16 @@
             this.lblPais.TabIndex = 2;
             this.lblPais.Text = "Pais";
             // 
+            // lblNombre
+            // 
+            this.lblNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(223, 24);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(0, 13);
+            this.lblNombre.TabIndex = 22;
+            // 
             // PanelFiltros
             // 
             this.PanelFiltros.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -240,22 +238,21 @@
             this.PanelFiltros.BackColor = System.Drawing.Color.White;
             this.PanelFiltros.Controls.Add(this.btnAgregarCircuito);
             this.PanelFiltros.Controls.Add(this.PBXCircuito);
-            this.PanelFiltros.Controls.Add(this.MtxtFecha);
             this.PanelFiltros.Controls.Add(this.panel1);
+            this.PanelFiltros.Controls.Add(this.TxtPrimerGP);
+            this.PanelFiltros.Controls.Add(this.TxtLongitud);
             this.PanelFiltros.Controls.Add(this.TxtLugar);
-            this.PanelFiltros.Controls.Add(this.TxtPais);
-            this.PanelFiltros.Controls.Add(this.TxtApellido);
             this.PanelFiltros.Controls.Add(this.TxtNombre);
-            this.PanelFiltros.Controls.Add(this.label13);
             this.PanelFiltros.Controls.Add(this.label11);
             this.PanelFiltros.Controls.Add(this.label9);
             this.PanelFiltros.Controls.Add(this.label7);
             this.PanelFiltros.Controls.Add(this.label5);
-            this.PanelFiltros.Controls.Add(this.label1);
+            this.PanelFiltros.Controls.Add(this.lbl_A_Circuito);
             this.PanelFiltros.Controls.Add(this.CbxFiltroTemporada);
-            this.PanelFiltros.Controls.Add(this.cbxOrdenadosFechaNacimiento);
-            this.PanelFiltros.Controls.Add(this.ChxMayorCantidaddePodios);
+            this.PanelFiltros.Controls.Add(this.cbxOrdenadosPrimerGP);
+            this.PanelFiltros.Controls.Add(this.ChxMayorLongitud);
             this.PanelFiltros.Controls.Add(this.label22);
+            this.PanelFiltros.Cursor = System.Windows.Forms.Cursors.Default;
             this.PanelFiltros.Location = new System.Drawing.Point(353, 25);
             this.PanelFiltros.Name = "PanelFiltros";
             this.PanelFiltros.Size = new System.Drawing.Size(653, 505);
@@ -263,10 +260,7 @@
             // 
             // btnAgregarCircuito
             // 
-            this.btnAgregarCircuito.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregarCircuito.Location = new System.Drawing.Point(148, 241);
+            this.btnAgregarCircuito.Location = new System.Drawing.Point(16, 279);
             this.btnAgregarCircuito.Name = "btnAgregarCircuito";
             this.btnAgregarCircuito.Size = new System.Drawing.Size(75, 23);
             this.btnAgregarCircuito.TabIndex = 42;
@@ -279,6 +273,8 @@
             this.PBXCircuito.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.PBXCircuito.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PBXCircuito.Image = ((System.Drawing.Image)(resources.GetObject("PBXCircuito.Image")));
             this.PBXCircuito.Location = new System.Drawing.Point(248, 226);
             this.PBXCircuito.Name = "PBXCircuito";
             this.PBXCircuito.Size = new System.Drawing.Size(394, 258);
@@ -287,19 +283,39 @@
             this.PBXCircuito.TabStop = false;
             this.PBXCircuito.Click += new System.EventHandler(this.PBXCircuito_Click);
             // 
-            // MtxtFecha
+            // panel1
             // 
-            this.MtxtFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.panel1.Location = new System.Drawing.Point(0, 201);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(661, 10);
+            this.panel1.TabIndex = 29;
+            // 
+            // TxtPrimerGP
+            // 
+            this.TxtPrimerGP.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.MtxtFecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.MtxtFecha.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.MtxtFecha.Location = new System.Drawing.Point(16, 434);
-            this.MtxtFecha.Mask = "00/00/0000";
-            this.MtxtFecha.Name = "MtxtFecha";
-            this.MtxtFecha.Size = new System.Drawing.Size(226, 13);
-            this.MtxtFecha.TabIndex = 40;
-            this.MtxtFecha.ValidatingType = typeof(System.DateTime);
+            this.TxtPrimerGP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.TxtPrimerGP.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtPrimerGP.Location = new System.Drawing.Point(16, 469);
+            this.TxtPrimerGP.Name = "TxtPrimerGP";
+            this.TxtPrimerGP.Size = new System.Drawing.Size(226, 13);
+            this.TxtPrimerGP.TabIndex = 39;
+            // 
+            // TxtLongitud
+            // 
+            this.TxtLongitud.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtLongitud.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.TxtLongitud.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtLongitud.Location = new System.Drawing.Point(16, 430);
+            this.TxtLongitud.Name = "TxtLongitud";
+            this.TxtLongitud.Size = new System.Drawing.Size(226, 13);
+            this.TxtLongitud.TabIndex = 38;
             // 
             // TxtLugar
             // 
@@ -308,34 +324,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtLugar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.TxtLugar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtLugar.Location = new System.Drawing.Point(16, 401);
+            this.TxtLugar.Location = new System.Drawing.Point(16, 391);
             this.TxtLugar.Name = "TxtLugar";
             this.TxtLugar.Size = new System.Drawing.Size(226, 13);
-            this.TxtLugar.TabIndex = 39;
-            // 
-            // TxtPais
-            // 
-            this.TxtPais.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtPais.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.TxtPais.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtPais.Location = new System.Drawing.Point(16, 362);
-            this.TxtPais.Name = "TxtPais";
-            this.TxtPais.Size = new System.Drawing.Size(226, 13);
-            this.TxtPais.TabIndex = 38;
-            // 
-            // TxtApellido
-            // 
-            this.TxtApellido.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtApellido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.TxtApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtApellido.Location = new System.Drawing.Point(16, 323);
-            this.TxtApellido.Name = "TxtApellido";
-            this.TxtApellido.Size = new System.Drawing.Size(226, 13);
-            this.TxtApellido.TabIndex = 37;
+            this.TxtLugar.TabIndex = 37;
             // 
             // TxtNombre
             // 
@@ -344,22 +336,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.TxtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtNombre.Location = new System.Drawing.Point(16, 284);
+            this.TxtNombre.Location = new System.Drawing.Point(16, 352);
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(226, 13);
             this.TxtNombre.TabIndex = 36;
-            // 
-            // label13
-            // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(12, 417);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(106, 13);
-            this.label13.TabIndex = 35;
-            this.label13.Text = "Fecha de nacimiento";
             // 
             // label11
             // 
@@ -367,11 +347,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(13, 385);
+            this.label11.Location = new System.Drawing.Point(13, 453);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(103, 13);
+            this.label11.Size = new System.Drawing.Size(82, 13);
             this.label11.TabIndex = 34;
-            this.label11.Text = "Lugar de nacimiento";
+            this.label11.Text = "Primer Gran Prix";
             // 
             // label9
             // 
@@ -379,11 +359,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(13, 346);
+            this.label9.Location = new System.Drawing.Point(13, 375);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(96, 13);
+            this.label9.Size = new System.Drawing.Size(62, 13);
             this.label9.TabIndex = 33;
-            this.label9.Text = "Pais de nacimiento";
+            this.label9.Text = "Pais/ Lugar";
             // 
             // label7
             // 
@@ -391,11 +371,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 307);
+            this.label7.Location = new System.Drawing.Point(13, 414);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 13);
+            this.label7.Size = new System.Drawing.Size(48, 13);
             this.label7.TabIndex = 32;
-            this.label7.Text = "Apellido";
+            this.label7.Text = "Longitud";
             // 
             // label5
             // 
@@ -403,65 +383,65 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 268);
+            this.label5.Location = new System.Drawing.Point(13, 336);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 13);
             this.label5.TabIndex = 31;
             this.label5.Text = "Nombre";
             // 
-            // label1
+            // lbl_A_Circuito
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.lbl_A_Circuito.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 241);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 13);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Agregar Piloto";
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.panel1.Location = new System.Drawing.Point(0, 201);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(661, 10);
-            this.panel1.TabIndex = 29;
+            this.lbl_A_Circuito.AutoSize = true;
+            this.lbl_A_Circuito.Location = new System.Drawing.Point(13, 241);
+            this.lbl_A_Circuito.Name = "lbl_A_Circuito";
+            this.lbl_A_Circuito.Size = new System.Drawing.Size(82, 13);
+            this.lbl_A_Circuito.TabIndex = 30;
+            this.lbl_A_Circuito.Text = "Agregar Circuito";
             // 
             // CbxFiltroTemporada
             // 
+            this.CbxFiltroTemporada.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.CbxFiltroTemporada.FormattingEnabled = true;
             this.CbxFiltroTemporada.Location = new System.Drawing.Point(190, 38);
             this.CbxFiltroTemporada.Name = "CbxFiltroTemporada";
             this.CbxFiltroTemporada.Size = new System.Drawing.Size(121, 21);
             this.CbxFiltroTemporada.TabIndex = 26;
+            this.CbxFiltroTemporada.SelectedIndexChanged += new System.EventHandler(this.ddlFiltroTemporadas_SelectedIndexChanged);
             // 
-            // cbxOrdenadosFechaNacimiento
+            // cbxOrdenadosPrimerGP
             // 
-            this.cbxOrdenadosFechaNacimiento.AutoSize = true;
-            this.cbxOrdenadosFechaNacimiento.Location = new System.Drawing.Point(57, 115);
-            this.cbxOrdenadosFechaNacimiento.Name = "cbxOrdenadosFechaNacimiento";
-            this.cbxOrdenadosFechaNacimiento.Size = new System.Drawing.Size(146, 17);
-            this.cbxOrdenadosFechaNacimiento.TabIndex = 24;
-            this.cbxOrdenadosFechaNacimiento.Text = "Ordenados por Primer GP";
-            this.cbxOrdenadosFechaNacimiento.UseVisualStyleBackColor = true;
-            this.cbxOrdenadosFechaNacimiento.CheckedChanged += new System.EventHandler(this.cbxOrdenadosFechaNacimiento_CheckedChanged);
+            this.cbxOrdenadosPrimerGP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxOrdenadosPrimerGP.AutoSize = true;
+            this.cbxOrdenadosPrimerGP.Location = new System.Drawing.Point(57, 115);
+            this.cbxOrdenadosPrimerGP.Name = "cbxOrdenadosPrimerGP";
+            this.cbxOrdenadosPrimerGP.Size = new System.Drawing.Size(146, 17);
+            this.cbxOrdenadosPrimerGP.TabIndex = 24;
+            this.cbxOrdenadosPrimerGP.Text = "Ordenados por Primer GP";
+            this.cbxOrdenadosPrimerGP.UseVisualStyleBackColor = true;
+            this.cbxOrdenadosPrimerGP.CheckedChanged += new System.EventHandler(this.cbxOrdenadosPrimerGP_CheckedChanged);
             // 
-            // ChxMayorCantidaddePodios
+            // ChxMayorLongitud
             // 
-            this.ChxMayorCantidaddePodios.AutoSize = true;
-            this.ChxMayorCantidaddePodios.Location = new System.Drawing.Point(57, 79);
-            this.ChxMayorCantidaddePodios.Name = "ChxMayorCantidaddePodios";
-            this.ChxMayorCantidaddePodios.Size = new System.Drawing.Size(140, 17);
-            this.ChxMayorCantidaddePodios.TabIndex = 23;
-            this.ChxMayorCantidaddePodios.Text = "Ordenados por Longitud";
-            this.ChxMayorCantidaddePodios.UseVisualStyleBackColor = true;
+            this.ChxMayorLongitud.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ChxMayorLongitud.AutoSize = true;
+            this.ChxMayorLongitud.Location = new System.Drawing.Point(57, 79);
+            this.ChxMayorLongitud.Name = "ChxMayorLongitud";
+            this.ChxMayorLongitud.Size = new System.Drawing.Size(140, 17);
+            this.ChxMayorLongitud.TabIndex = 23;
+            this.ChxMayorLongitud.Text = "Ordenados por Longitud";
+            this.ChxMayorLongitud.UseVisualStyleBackColor = true;
+            this.ChxMayorLongitud.CheckedChanged += new System.EventHandler(this.ChxMayorLongitud_CheckedChanged);
             // 
             // label22
             // 
-            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(54, 41);
             this.label22.Name = "label22";
@@ -507,21 +487,19 @@
         private System.Windows.Forms.Button btnFiltros;
         private System.Windows.Forms.Panel PanelFiltros;
         private System.Windows.Forms.ComboBox CbxFiltroTemporada;
-        private System.Windows.Forms.CheckBox cbxOrdenadosFechaNacimiento;
-        private System.Windows.Forms.CheckBox ChxMayorCantidaddePodios;
+        private System.Windows.Forms.CheckBox cbxOrdenadosPrimerGP;
+        private System.Windows.Forms.CheckBox ChxMayorLongitud;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_A_Circuito;
+        private System.Windows.Forms.TextBox TxtPrimerGP;
+        private System.Windows.Forms.TextBox TxtLongitud;
         private System.Windows.Forms.TextBox TxtLugar;
-        private System.Windows.Forms.TextBox TxtPais;
-        private System.Windows.Forms.TextBox TxtApellido;
         private System.Windows.Forms.TextBox TxtNombre;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.MaskedTextBox MtxtFecha;
         private System.Windows.Forms.PictureBox PBXCircuito;
         private System.Windows.Forms.Button btnAgregarCircuito;
         private System.Windows.Forms.Label lblNombre;
