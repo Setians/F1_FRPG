@@ -96,7 +96,14 @@ namespace Formula1
             Fuente();
             DGVCircuitos.Focus();
             PanelFiltros.Hide();
-
+            txtMNombre.Hide();
+            txtMNombre.Location =  lblNombre.PointToScreen(lblNombre.Location); 
+            txtMLongitud.Hide();
+            txtMLongitud.Location = lblLongitud_D.PointToScreen(Point.Empty);
+            txtMPais.Hide();
+            txtMPais.Location = lblPais_D.PointToScreen(Point.Empty);
+            txtMPrimerGP.Hide();
+            txtMPrimerGP.Location = lblPGP_D.PointToScreen(Point.Empty);
         }
 
         private void DGVCircuitos_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
@@ -189,5 +196,13 @@ namespace Formula1
             }
         }
 
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            txtMNombre.Show();
+            lblNombre.Hide();
+            txtMLongitud.Show();
+            txtMPais.Show();
+            txtMPrimerGP.Show();
+        }
     }
 }

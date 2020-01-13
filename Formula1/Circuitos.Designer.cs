@@ -60,6 +60,11 @@
             this.cbxOrdenadosPrimerGP = new System.Windows.Forms.CheckBox();
             this.ChxMayorLongitud = new System.Windows.Forms.CheckBox();
             this.label22 = new System.Windows.Forms.Label();
+            this.txtMPrimerGP = new System.Windows.Forms.TextBox();
+            this.txtMNombre = new System.Windows.Forms.TextBox();
+            this.txtMLongitud = new System.Windows.Forms.TextBox();
+            this.txtMPais = new System.Windows.Forms.TextBox();
+            this.btnModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGVCircuitos)).BeginInit();
             this.PanelCorredores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_Circuito_Carga)).BeginInit();
@@ -117,6 +122,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PanelCorredores.BackColor = System.Drawing.Color.White;
+            this.PanelCorredores.Controls.Add(this.btnModificar);
+            this.PanelCorredores.Controls.Add(this.txtMPais);
+            this.PanelCorredores.Controls.Add(this.txtMLongitud);
+            this.PanelCorredores.Controls.Add(this.txtMNombre);
+            this.PanelCorredores.Controls.Add(this.txtMPrimerGP);
             this.PanelCorredores.Controls.Add(this.btnFiltros);
             this.PanelCorredores.Controls.Add(this.pbx_Circuito_Carga);
             this.PanelCorredores.Controls.Add(this.lblPGP_D);
@@ -137,7 +147,7 @@
             // 
             this.btnFiltros.Location = new System.Drawing.Point(11, 55);
             this.btnFiltros.Name = "btnFiltros";
-            this.btnFiltros.Size = new System.Drawing.Size(86, 23);
+            this.btnFiltros.Size = new System.Drawing.Size(117, 23);
             this.btnFiltros.TabIndex = 21;
             this.btnFiltros.Text = "Filtrar/Buscar";
             this.btnFiltros.UseVisualStyleBackColor = true;
@@ -227,8 +237,9 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.Location = new System.Drawing.Point(223, 24);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(0, 13);
+            this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 22;
+            this.lblNombre.Text = "Nombre";
             // 
             // PanelFiltros
             // 
@@ -449,6 +460,56 @@
             this.label22.TabIndex = 8;
             this.label22.Text = "Temporada";
             // 
+            // txtMPrimerGP
+            // 
+            this.txtMPrimerGP.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtMPrimerGP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtMPrimerGP.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMPrimerGP.Location = new System.Drawing.Point(376, 84);
+            this.txtMPrimerGP.Name = "txtMPrimerGP";
+            this.txtMPrimerGP.Size = new System.Drawing.Size(123, 13);
+            this.txtMPrimerGP.TabIndex = 37;
+            // 
+            // txtMNombre
+            // 
+            this.txtMNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtMNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtMNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMNombre.Location = new System.Drawing.Point(376, 24);
+            this.txtMNombre.Name = "txtMNombre";
+            this.txtMNombre.Size = new System.Drawing.Size(123, 13);
+            this.txtMNombre.TabIndex = 38;
+            // 
+            // txtMLongitud
+            // 
+            this.txtMLongitud.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtMLongitud.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtMLongitud.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMLongitud.Location = new System.Drawing.Point(376, 65);
+            this.txtMLongitud.Name = "txtMLongitud";
+            this.txtMLongitud.Size = new System.Drawing.Size(123, 13);
+            this.txtMLongitud.TabIndex = 39;
+            // 
+            // txtMPais
+            // 
+            this.txtMPais.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtMPais.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtMPais.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMPais.Location = new System.Drawing.Point(376, 46);
+            this.txtMPais.Name = "txtMPais";
+            this.txtMPais.Size = new System.Drawing.Size(123, 13);
+            this.txtMPais.TabIndex = 40;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(11, 86);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(117, 23);
+            this.btnModificar.TabIndex = 41;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
             // Circuitos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -456,8 +517,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.ClientSize = new System.Drawing.Size(1018, 559);
             this.Controls.Add(this.DGVCircuitos);
-            this.Controls.Add(this.PanelFiltros);
             this.Controls.Add(this.PanelCorredores);
+            this.Controls.Add(this.PanelFiltros);
             this.Name = "Circuitos";
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.Circuitos_Load);
@@ -503,5 +564,10 @@
         private System.Windows.Forms.PictureBox PBXCircuito;
         private System.Windows.Forms.Button btnAgregarCircuito;
         private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.TextBox txtMPais;
+        private System.Windows.Forms.TextBox txtMLongitud;
+        private System.Windows.Forms.TextBox txtMNombre;
+        private System.Windows.Forms.TextBox txtMPrimerGP;
+        private System.Windows.Forms.Button btnModificar;
     }
 }
