@@ -19,7 +19,7 @@ namespace Formula1
         }
         private void FormPrinicpal_Load(object sender, EventArgs e)
         {
-            AbrirFormEnPanel<VisorImagenes>();
+            AbrirFormEnPanel(new VisorImagenes());
         }
 
         #region Funcionalidades del formulario
@@ -28,12 +28,12 @@ namespace Formula1
         {
             //-------CON EFECTO SLIDE
             //if (MenuVertical.Width == 250)
-           // {
+            // {
             //    this.tmOcultarMenu.Enabled = true;
-             //   PBLogo.Width = 75;
-                
-           // }
-           // else if (MenuVertical.Width == 75)
+            //   PBLogo.Width = 75;
+
+            // }
+            // else if (MenuVertical.Width == 75)
             //    this.tmMostrarMenu.Enabled = true;
 
             //-------SIN EFECTO SLIDE
@@ -48,7 +48,7 @@ namespace Formula1
                 PBLogo.Width = 75;
             }
 
-                
+
         }
 
         private void tmMostrarMenu_Tick(object sender, EventArgs e)
@@ -113,7 +113,7 @@ namespace Formula1
             e.Graphics.FillRectangle(blueBrush, sizeGripRectangle);
 
             base.OnPaint(e);
-            ControlPaint.DrawSizeGrip(e.Graphics, Color.Transparent , sizeGripRectangle);
+            ControlPaint.DrawSizeGrip(e.Graphics, Color.Transparent, sizeGripRectangle);
         }
 
         //------Capturar posicion y tamaño antes de maximizar para restaurar
@@ -138,7 +138,7 @@ namespace Formula1
 
         private void BtnRestaurar_Click(object sender, EventArgs e)
         {
-            this.Size = new Size(sw,sh);
+            this.Size = new Size(sw, sh);
             this.Location = new Point(lx, ly);
             btnMaximizar.Visible = true;
             BtnRestaurar.Visible = false;
@@ -165,61 +165,37 @@ namespace Formula1
 
         private void BtnCorredores_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel<Corredores>();
-            BtnCorredores.BackColor= Color.FromArgb(204, 204, 204);
-            
+            AbrirFormEnPanel(new Corredores());
+            BtnCorredores.BackColor = Color.FromArgb(204, 204, 204);
+
         }
 
         private void BtnCircuitos_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel<Circuitos>();
-            BtnCorredores.BackColor = Color.FromArgb(204, 204, 204);
+            AbrirFormEnPanel(new Circuitos());
+            BtnCircuitos.BackColor = Color.FromArgb(204, 204, 204);
         }
 
         //METODO PARA ABRIR FORM DENTRO DE PANEL-----------------------------------------------------
-        private void AbrirFormEnPanel<Forms>() where Forms : Form, new()
+        private Form formaActiva = null;
+        private void AbrirFormEnPanel(Form form)
         {
-            Form formulario;
-            formulario = PanelContenedor.Controls.OfType<Forms>().FirstOrDefault();
-
-            //si el formulario/instancia no existe, creamos nueva instancia y mostramos
-            if (formulario == null)
+            if (formaActiva != null)
             {
-                formulario = new Forms();
-                formulario.TopLevel = false;
-                formulario.FormBorderStyle = FormBorderStyle.None;
-                formulario.Dock = DockStyle.Fill;
-                PanelContenedor.Controls.Add(formulario);
-                PanelContenedor.Tag = formulario;
-                formulario.Show();
-
-                formulario.BringToFront();
-                formulario.FormClosed += new FormClosedEventHandler(CloseForms);               
+                if (formaActiva.Name == "Corredores")
+                    BtnCorredores.BackColor = Color.White;
+                if (formaActiva.Name == "Circuitos")
+                    BtnCircuitos.BackColor = Color.White;
+                formaActiva.Close();
             }
-            else
-            {
-
-                //si la Formulario/instancia existe, lo traemos a frente
-                formulario.BringToFront();
-
-                //Si la instancia esta minimizada mostramos
-                if (formulario.WindowState == FormWindowState.Minimized)
-                {
-                    formulario.WindowState = FormWindowState.Normal;
-                }
-
-            }
+            formaActiva = form;
+            formaActiva.TopLevel = false;
+            formaActiva.FormBorderStyle = FormBorderStyle.None;
+            formaActiva.Dock = DockStyle.Fill;
+            PanelContenedor.Controls.Add(formaActiva);
+            PanelContenedor.Tag = formaActiva;
+            formaActiva.BringToFront();
+            formaActiva.Show();
         }
-
-        private void CloseForms(object sender, FormClosedEventArgs e)
-        {
-            if (Application.OpenForms["Form2"] == null)
-                BtnCorredores.BackColor = Color.White;
-            //if (Application.OpenForms["Form2"] == null)
-              //  BtnCircuitos.BackColor = Color.FromArgb(204, 204, 204);
-            //if (Application.OpenForms["Form3"] == null)
-              //  btnEscuderias.BackColor = Color.FromArgb(204, 204, 204);
-        }
-        
     }
 }
